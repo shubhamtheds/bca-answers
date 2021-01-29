@@ -1,0 +1,42 @@
+body {
+  background-color: #eee;
+}
+
+@-webkit-keyframes animationgradienttitle {
+  0% {
+    background-position: 0 1600px;
+  }
+
+  100% {
+    background-position: 1600px 0;
+  }
+}
+
+@keyframes animationgradienttitle {
+  0% {
+    background-position: 0 1600px;
+  }
+
+  100% {
+    background-position: 1600px 0;
+  }
+}
+
+.text {
+  font-family: var(--font-1);
+  color: #fc3735;
+  background: -webkit-linear-gradient(left, #f57170, #10ddc2, #f57170);
+  padding-bottom: 10px;
+  background-size: 1600px 200px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-name: animationgradienttitle;
+  animation-name: animationgradienttitle;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
