@@ -1,829 +1,628 @@
-<html>
-
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Computer Examination Answers</title>
-	<style>
-		/* webkit printing magic: print all background colors */
-		html {
-			-webkit-print-color-adjust: exact;
-		}
-
-		* {
-			box-sizing: border-box;
-			-webkit-print-color-adjust: exact;
-		}
-
-		html,
-		body {
-			margin: 0;
-			padding: 0;
-		}
-
-		@media only screen {
-			body {
-				margin: 2em auto;
-				max-width: 900px;
-				color: rgb(55, 53, 47);
-			}
-		}
-
-		body {
-			line-height: 1.5;
-			white-space: pre-wrap;
-		}
-
-		a,
-		a.visited {
-			color: inherit;
-			text-decoration: underline;
-		}
-
-		.pdf-relative-link-path {
-			font-size: 80%;
-			color: #444;
-		}
-
-		h1,
-		h2,
-		h3 {
-			letter-spacing: -0.01em;
-			line-height: 1.2;
-			font-weight: 600;
-			margin-bottom: 0;
-		}
-
-		.page-title {
-			font-size: 2.5rem;
-			font-weight: 700;
-			margin-top: 0;
-			margin-bottom: 0.75em;
-		}
-
-		h1 {
-			font-size: 1.875rem;
-			margin-top: 1.875rem;
-		}
-
-		h2 {
-			font-size: 1.5rem;
-			margin-top: 1.5rem;
-		}
-
-		h3 {
-			font-size: 1.25rem;
-			margin-top: 1.25rem;
-		}
-
-		.source {
-			border: 1px solid #ddd;
-			border-radius: 3px;
-			padding: 1.5em;
-			word-break: break-all;
-		}
-
-		.callout {
-			border-radius: 3px;
-			padding: 1rem;
-		}
-
-		figure {
-			margin: 1.25em 0;
-			page-break-inside: avoid;
-		}
-
-		figcaption {
-			opacity: 0.5;
-			font-size: 85%;
-			margin-top: 0.5em;
-		}
-
-		mark {
-			background-color: transparent;
-		}
-
-		.indented {
-			padding-left: 1.5em;
-		}
-
-		hr {
-			background: transparent;
-			display: block;
-			width: 100%;
-			height: 1px;
-			visibility: visible;
-			border: none;
-			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-		}
-
-		img {
-			max-width: 100%;
-		}
-
-		@media only print {
-			img {
-				max-height: 100vh;
-				object-fit: contain;
-			}
-		}
-
-		@page {
-			margin: 1in;
-		}
-
-		.collection-content {
-			font-size: 0.875rem;
-		}
-
-		.column-list {
-			display: flex;
-			justify-content: space-between;
-		}
-
-		.column {
-			padding: 0 1em;
-		}
-
-		.column:first-child {
-			padding-left: 0;
-		}
-
-		.column:last-child {
-			padding-right: 0;
-		}
-
-		.table_of_contents-item {
-			display: block;
-			font-size: 0.875rem;
-			line-height: 1.3;
-			padding: 0.125rem;
-		}
-
-		.table_of_contents-indent-1 {
-			margin-left: 1.5rem;
-		}
-
-		.table_of_contents-indent-2 {
-			margin-left: 3rem;
-		}
-
-		.table_of_contents-indent-3 {
-			margin-left: 4.5rem;
-		}
-
-		.table_of_contents-link {
-			text-decoration: none;
-			opacity: 0.7;
-			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-		}
-
-		table,
-		th,
-		td {
-			border: 1px solid rgba(55, 53, 47, 0.09);
-			border-collapse: collapse;
-		}
-
-		table {
-			border-left: none;
-			border-right: none;
-		}
-
-		th,
-		td {
-			font-weight: normal;
-			padding: 0.25em 0.5em;
-			line-height: 1.5;
-			min-height: 1.5em;
-			text-align: left;
-		}
-
-		th {
-			color: rgba(55, 53, 47, 0.6);
-		}
-
-		ol,
-		ul {
-			margin: 0;
-			margin-block-start: 0.6em;
-			margin-block-end: 0.6em;
-		}
-
-		li>ol:first-child,
-		li>ul:first-child {
-			margin-block-start: 0.6em;
-		}
-
-		ul>li {
-			list-style: disc;
-		}
-
-		ul.to-do-list {
-			text-indent: -1.7em;
-		}
-
-		ul.to-do-list>li {
-			list-style: none;
-		}
-
-		.to-do-children-checked {
-			text-decoration: line-through;
-			opacity: 0.375;
-		}
-
-		ul.toggle>li {
-			list-style: none;
-		}
-
-		ul {
-			padding-inline-start: 1.7em;
-		}
-
-		ul>li {
-			padding-left: 0.1em;
-		}
-
-		ol {
-			padding-inline-start: 1.6em;
-		}
-
-		ol>li {
-			padding-left: 0.2em;
-		}
-
-		.mono ol {
-			padding-inline-start: 2em;
-		}
-
-		.mono ol>li {
-			text-indent: -0.4em;
-		}
-
-		.toggle {
-			padding-inline-start: 0em;
-			list-style-type: none;
-		}
-
-		/* Indent toggle children */
-		.toggle>li>details {
-			padding-left: 1.7em;
-		}
-
-		.toggle>li>details>summary {
-			margin-left: -1.1em;
-		}
-
-		.selected-value {
-			display: inline-block;
-			padding: 0 0.5em;
-			background: rgba(206, 205, 202, 0.5);
-			border-radius: 3px;
-			margin-right: 0.5em;
-			margin-top: 0.3em;
-			margin-bottom: 0.3em;
-			white-space: nowrap;
-		}
-
-		.collection-title {
-			display: inline-block;
-			margin-right: 1em;
-		}
-
-		time {
-			opacity: 0.5;
-		}
-
-		.icon {
-			display: inline-block;
-			max-width: 1.2em;
-			max-height: 1.2em;
-			text-decoration: none;
-			vertical-align: text-bottom;
-			margin-right: 0.5em;
-		}
-
-		img.icon {
-			border-radius: 3px;
-		}
-
-		.user-icon {
-			width: 1.5em;
-			height: 1.5em;
-			border-radius: 100%;
-			margin-right: 0.5rem;
-		}
-
-		.user-icon-inner {
-			font-size: 0.8em;
-		}
-
-		.text-icon {
-			border: 1px solid #000;
-			text-align: center;
-		}
-
-		.page-cover-image {
-			display: block;
-			object-fit: cover;
-			width: 100%;
-			height: 30vh;
-		}
-
-		.page-header-icon {
-			font-size: 3rem;
-			margin-bottom: 1rem;
-		}
-
-		.page-header-icon-with-cover {
-			margin-top: -0.72em;
-			margin-left: 0.07em;
-		}
-
-		.page-header-icon img {
-			border-radius: 3px;
-		}
-
-		.link-to-page {
-			margin: 1em 0;
-			padding: 0;
-			border: none;
-			font-weight: 500;
-		}
-
-		p>.user {
-			opacity: 0.5;
-		}
-
-		td>.user,
-		td>time {
-			white-space: nowrap;
-		}
-
-		input[type="checkbox"] {
-			transform: scale(1.5);
-			margin-right: 0.6em;
-			vertical-align: middle;
-		}
-
-		p {
-			margin-top: 0.5em;
-			margin-bottom: 0.5em;
-		}
-
-		.image {
-			border: none;
-			margin: 1.5em 0;
-			padding: 0;
-			border-radius: 0;
-			text-align: center;
-		}
-
-		.code,
-		code {
-			background: rgba(135, 131, 120, 0.15);
-			border-radius: 3px;
-			padding: 0.2em 0.4em;
-			border-radius: 3px;
-			font-size: 85%;
-			tab-size: 2;
-		}
-
-		code {
-			color: #eb5757;
-		}
-
-		.code {
-			padding: 1.5em 1em;
-		}
-
-		.code-wrap {
-			white-space: pre-wrap;
-			word-break: break-all;
-		}
-
-		.code>code {
-			background: none;
-			padding: 0;
-			font-size: 100%;
-			color: inherit;
-		}
-
-		blockquote {
-			font-size: 1.25em;
-			margin: 1em 0;
-			padding-left: 1em;
-			border-left: 3px solid rgb(55, 53, 47);
-		}
-
-		.bookmark {
-			text-decoration: none;
-			max-height: 8em;
-			padding: 0;
-			display: flex;
-			width: 100%;
-			align-items: stretch;
-		}
-
-		.bookmark-title {
-			font-size: 0.85em;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			height: 1.75em;
-			white-space: nowrap;
-		}
-
-		.bookmark-text {
-			display: flex;
-			flex-direction: column;
-		}
-
-		.bookmark-info {
-			flex: 4 1 180px;
-			padding: 12px 14px 14px;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-		}
-
-		.bookmark-image {
-			width: 33%;
-			flex: 1 1 180px;
-			display: block;
-			position: relative;
-			object-fit: cover;
-			border-radius: 1px;
-		}
-
-		.bookmark-description {
-			color: rgba(55, 53, 47, 0.6);
-			font-size: 0.75em;
-			overflow: hidden;
-			max-height: 4.5em;
-			word-break: break-word;
-		}
-
-		.bookmark-href {
-			font-size: 0.75em;
-			margin-top: 0.25em;
-		}
-
-		.sans {
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-		}
-
-		.code {
-			font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-		}
-
-		.serif {
-			font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif;
-		}
-
-		.mono {
-			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
-		}
-
-		.pdf .sans {
-			font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR';
-		}
-
-		.pdf .code {
-			font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR';
-		}
-
-		.pdf .serif {
-			font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR';
-		}
-
-		.pdf .mono {
-			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR';
-		}
-
-		.highlight-default {}
-
-		.highlight-gray {
-			color: rgb(155, 154, 151);
-		}
-
-		.highlight-brown {
-			color: rgb(100, 71, 58);
-		}
-
-		.highlight-orange {
-			color: rgb(217, 115, 13);
-		}
-
-		.highlight-yellow {
-			color: rgb(223, 171, 1);
-		}
-
-		.highlight-teal {
-			color: rgb(15, 123, 108);
-		}
-
-		.highlight-blue {
-			color: rgb(11, 110, 153);
-		}
-
-		.highlight-purple {
-			color: rgb(105, 64, 165);
-		}
-
-		.highlight-pink {
-			color: rgb(173, 26, 114);
-		}
-
-		.highlight-red {
-			color: rgb(224, 62, 62);
-		}
-
-		.highlight-gray_background {
-			background: rgb(235, 236, 237);
-		}
-
-		.highlight-brown_background {
-			background: rgb(233, 229, 227);
-		}
-
-		.highlight-orange_background {
-			background: rgb(250, 235, 221);
-		}
-
-		.highlight-yellow_background {
-			background: rgb(251, 243, 219);
-		}
-
-		.highlight-teal_background {
-			background: rgb(221, 237, 234);
-		}
-
-		.highlight-blue_background {
-			background: rgb(221, 235, 241);
-		}
-
-		.highlight-purple_background {
-			background: rgb(234, 228, 242);
-		}
-
-		.highlight-pink_background {
-			background: rgb(244, 223, 235);
-		}
-
-		.highlight-red_background {
-			background: rgb(251, 228, 228);
-		}
-
-		.block-color-default {
-			color: inherit;
-			fill: inherit;
-		}
-
-		.block-color-gray {
-			color: rgba(55, 53, 47, 0.6);
-			fill: rgba(55, 53, 47, 0.6);
-		}
-
-		.block-color-brown {
-			color: rgb(100, 71, 58);
-			fill: rgb(100, 71, 58);
-		}
-
-		.block-color-orange {
-			color: rgb(217, 115, 13);
-			fill: rgb(217, 115, 13);
-		}
-
-		.block-color-yellow {
-			color: rgb(223, 171, 1);
-			fill: rgb(223, 171, 1);
-		}
-
-		.block-color-teal {
-			color: rgb(15, 123, 108);
-			fill: rgb(15, 123, 108);
-		}
-
-		.block-color-blue {
-			color: rgb(11, 110, 153);
-			fill: rgb(11, 110, 153);
-		}
-
-		.block-color-purple {
-			color: rgb(105, 64, 165);
-			fill: rgb(105, 64, 165);
-		}
-
-		.block-color-pink {
-			color: rgb(173, 26, 114);
-			fill: rgb(173, 26, 114);
-		}
-
-		.block-color-red {
-			color: rgb(224, 62, 62);
-			fill: rgb(224, 62, 62);
-		}
-
-		.block-color-gray_background {
-			background: rgb(235, 236, 237);
-		}
-
-		.block-color-brown_background {
-			background: rgb(233, 229, 227);
-		}
-
-		.block-color-orange_background {
-			background: rgb(250, 235, 221);
-		}
-
-		.block-color-yellow_background {
-			background: rgb(251, 243, 219);
-		}
-
-		.block-color-teal_background {
-			background: rgb(221, 237, 234);
-		}
-
-		.block-color-blue_background {
-			background: rgb(221, 235, 241);
-		}
-
-		.block-color-purple_background {
-			background: rgb(234, 228, 242);
-		}
-
-		.block-color-pink_background {
-			background: rgb(244, 223, 235);
-		}
-
-		.block-color-red_background {
-			background: rgb(251, 228, 228);
-		}
-
-		.select-value-color-default {
-			background-color: rgba(206, 205, 202, 0.5);
-		}
-
-		.select-value-color-gray {
-			background-color: rgba(155, 154, 151, 0.4);
-		}
-
-		.select-value-color-brown {
-			background-color: rgba(140, 46, 0, 0.2);
-		}
-
-		.select-value-color-orange {
-			background-color: rgba(245, 93, 0, 0.2);
-		}
-
-		.select-value-color-yellow {
-			background-color: rgba(233, 168, 0, 0.2);
-		}
-
-		.select-value-color-green {
-			background-color: rgba(0, 135, 107, 0.2);
-		}
-
-		.select-value-color-blue {
-			background-color: rgba(0, 120, 223, 0.2);
-		}
-
-		.select-value-color-purple {
-			background-color: rgba(103, 36, 222, 0.2);
-		}
-
-		.select-value-color-pink {
-			background-color: rgba(221, 0, 129, 0.2);
-		}
-
-		.select-value-color-red {
-			background-color: rgba(255, 0, 26, 0.2);
-		}
-
-		.checkbox {
-			display: inline-flex;
-			vertical-align: text-bottom;
-			width: 16;
-			height: 16;
-			background-size: 16px;
-			margin-left: 2px;
-			margin-right: 5px;
-		}
-
-		.checkbox-on {
-			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-		}
-
-		.checkbox-off {
-			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-		}
-	</style>
-</head>
-
-<body>
-	<article id="5b792001-a9b5-49b4-a2c3-9132c1c574d7" class="page sans">
-		<header>
-			<h1 class="page-title">Computer Examination Answers</h1>
-		</header>
-		<div class="page-body">
-			<blockquote id="35c07974-6aa1-4906-88bd-e7935eba22f1" class="">Section A</blockquote>
-			<h2 id="ecbbd6ee-858f-446d-a78a-c6ef1c191f95" class="">Q1: What is computer?</h2>
-			<p id="bcd13ef3-2cf2-4ea4-9457-ad8f2655f598" class="">A computer is a machine that can be instructed to
-				carry out sequences of arithmetic or logical operations automatically via computer programming. Modern
-				computers have the ability to follow generalized sets of operations, called programs. These programs
-				enable computers to perform an extremely wide range of tasks. A "complete" computer including the
-				hardware, the operating system (main software), and peripheral equipment required and used for "full"
-				operation can be referred to as a computer system.</p>
-			<h2 id="c053e868-7b72-4464-9074-9b252509d8cf" class="">Q2: What is multiprocessing operating system?</h2>
-			<p id="ab76887e-babc-4876-b3cd-5e3958026144" class="">In a uni-processor system, only one process executes
-				at a time.</p>
-			<p id="5352eb2d-d28d-4e7c-8650-323149dcc2b3" class="">Multiprocessing is the use of two or more CPUs
-				(processors) within a single Computer system. The term also refers to the ability of a system to support
-				more than one processor within a single computer system. Now since there are multiple processors
-				available, multiple processes can be executed at a time. These multi processors share the computer bus,
-				sometimes the clock, memory and peripheral devices also.</p>
-			<h2 id="3a4177c1-0b29-48f3-8008-66110b594cd5" class="">Q3: What is volatile memory?</h2>
-			<p id="be432c86-9177-4a83-be49-7feb1f24af4b" class="">It is the memory hardware that fetches/stores data at
-				a high-speed. It is also referred as temporary memory. The data within the volatile memory is stored
-				till the system is capable of, but once the system is turned off the data within the volatile memory is
-				deleted automatically. RAM (Random Access Memory) and Cache Memory are some common examples of volatile
-				memory. Here, data fetch/store is fast and economical.</p>
-			<h2 id="88ebeed8-3f54-4bef-b2a6-e342f4b800d3" class="">Q4: What is non volatile memory?</h2>
-			<p id="3fbda0ef-1faa-4048-b4be-e8841c40b368" class=""><strong>Non-Volatile Memory:</strong></p>
-			<p id="16de3c08-bc86-43c8-aa5f-331fc7350b99" class="">It is the type of memory in which data or information
-				is not lost within the memory even power is shut-down. ROM is the most common example of non-volatile
-				memory. It’s not economical and slow in fetch/store as compared to volatile memory however stores a
-				higher volume of data. All such information that needs to be stored for an extended amount of time is
-				stored in non-volatile memory. Non-volatile memory has a huge impact on a system’s storage capacity.</p>
-			<h2 id="9a51a2c0-8280-4ebe-bb03-0fe5cb205e05" class="">Q5: What is memory?</h2>
-			<p id="6226314b-17ab-4ba8-a740-d04befd6c668" class="">A memory is just like a human brain. It is used to
-				store data and instructions. Computer memory is the storage space in the computer, where data is to be
-				processed and instructions required for processing are stored. The memory is divided into large number
-				of small parts called cells. Each location or cell has a unique address, which varies from zero to
-				memory size minus one.</p>
-			<h2 id="a6563122-8ce0-4987-b332-24c027acd6e7" class="">Q6: List the types of computers.</h2>
-			<figure id="9782e8d8-e815-4200-bdea-38bcedc701a4" class="image"><a
-					href="Computer%20Examination%20Answers%209782e8d8e8154200bdea38bcedc701a4/Untitled.png"><img
-						style="width:1284px"
-						src="Computer%20Examination%20Answers%209782e8d8e8154200bdea38bcedc701a4/Untitled.png" /></a>
-			</figure>
-			<h2 id="39317f26-9e26-4ee3-b4a9-e1c51287b9fa" class="">Q7: Describe DOS Operating System.</h2>
-			<p id="d39dfc79-e966-433a-bf86-4b4c7c0e3653" class="">Any operating system which runs from the hard disk
-				drive is termed a Disk Operating System ( D.O.S ). This also refers to the specific family of disk
-				operating systems which is also known as MS-DOS or Microsoft disk operating systems. Anything which
-				commands and controls the computer’s hardware and its peripheral devices with control over the program
-				and its functionality is known as the operating system. This operating system which runs through the
-				hard disk is known as a disk operating system. For the very first time, It was made and introduced for
-				IBM by Microsoft which was known as IBM PC DOS in the year 1981.</p>
-			<blockquote id="15224fdd-f0d2-42fa-bb55-a493fac62759" class="">Section B</blockquote>
-			<h2 id="d6af29ac-1238-4190-8499-b6675c9f4919" class="">Q1: Draw the Block diagram of a digital computer.
-				Discuss its components in brief.</h2>
-			<figure id="67e11c7c-30e4-4f70-85dc-54f93d2ae822" class="image"><a
-					href="Computer%20Examination%20Answers%209782e8d8e8154200bdea38bcedc701a4/6a42b3d72f58b424a1e53ca25e30e6e6.jpg"><img
-						style="width:1080px"
-						src="Computer%20Examination%20Answers%209782e8d8e8154200bdea38bcedc701a4/6a42b3d72f58b424a1e53ca25e30e6e6.jpg" /></a>
-			</figure>
-			<p id="7c25ce1e-d0ad-45fa-9b6c-6af5608370ba" class=""><strong>1. Input: </strong>This is the process of
-				entering data and programs into the computer system. The input unit takes data from us to the computer
-				in an organized manner for processing.</p>
-			<p id="ba5b8d05-0e80-42b8-a7bb-7ba7e4c2d464" class=""><strong>2. Storage: </strong>The process of saving
-				data and instructions permanently is known as storage. Data has to be fed into the system before the
-				actual processing starts. It is because the processing speed of the Central Processing Unit (CPU) is so
-				fast that the data has to be provided to the CPU with the same speed.</p>
-			<p id="f2599213-7b8c-4db6-afb6-b5fd43a97706" class="">The storage unit performs the following major
-				functions:</p>
-			<ul id="d6d5029b-1562-49f7-9916-79e5aa82a42c" class="bulleted-list">
-				<li>All data and instructions are stored here before and after processing.</li>
-			</ul>
-			<ul id="43b19c11-bf01-4701-951d-04e8c78fe505" class="bulleted-list">
-				<li>Intermediate results of processing are also stored here.</li>
-			</ul>
-			<p id="fe8d3964-72f3-43a0-9768-0df58af0b509" class=""><strong>3. Processing: </strong>The task of performing
-				operations like arithmetic and logical operations is called processing. The Central Processing Unit
-				(CPU) takes data and instructions from the storage unit and makes all sorts of calculations based on the
-				instructions given and the type of data provided.</p>
-			<p id="c76b15ae-35d4-4a65-ac9d-d7396facbabb" class=""><strong>4. Output: </strong>This is the process of
-				producing results from the data for getting useful information. Similarly, the output produced by the
-				computer after processing must also be kept somewhere inside the computer before being given to you in a
-				human-readable form.</p>
-			<p id="85e2951f-08fd-4207-983b-1613f1733634" class=""><strong>5. Control: </strong>The manner how
-				instructions are executed and the above operations are performed. Controlling of all operations like
-				input, processing, and output are performed by the control unit.</p>
-			<h2 id="d3818b1e-445e-4e23-8bac-f5d16576978f" class="">Q2: What do you mean by data organization? Explain it
-				with an example.</h2>
-			<p id="6881bb97-9d81-44dc-b2a6-cafa86c7aeab" class="">Data organization is the practice of categorizing and
-				classifying data to make it more usable. Similar to a file folder, where we keep important documents,
-				you’ll need to arrange your data in the most logical and orderly fashion, so you — and anyone else who
-				accesses it — can easily find what they’re looking for.</p>
-			<p id="d5ce6750-d1b9-4bc7-a2bf-b0682041a948" class="">Data organization, in broad terms, refers to the
-				method of classifying and organizing data sets to make them more useful. Some IT experts apply this
-				primarily to physical records, although some types of data organization can also be applied to digital
-				records.</p>
-			<p id="4cf15c44-64dd-4f82-92f0-e7f712ddb9f9" class="">Examples of organizational data include: job family,
-				job role, organization, line of business, cost center, location, region, layer, level, number of direct
-				reports, and manager. This data is supplied to Workplace Analytics at the individual level, which means
-				that these attributes provide context to each person in the dataset.</p>
-		</div>
-	</article>
-</body>
-
-</html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Computer Examination Answers</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5b792001-a9b5-49b4-a2c3-9132c1c574d7" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🦊</span></div><h1 class="page-title">Computer Examination Answers</h1></header><div class="page-body"><blockquote id="35c07974-6aa1-4906-88bd-e7935eba22f1" class="">Section A</blockquote><h2 id="ecbbd6ee-858f-446d-a78a-c6ef1c191f95" class="">Q1: What is computer?</h2><p id="bcd13ef3-2cf2-4ea4-9457-ad8f2655f598" class="">A computer is a machine that can be instructed to carry out sequences of arithmetic or logical operations automatically via computer programming. Modern computers have the ability to follow generalized sets of operations, called programs. These programs enable computers to perform an extremely wide range of tasks.</p><p id="69defe5c-dd6d-4d67-8119-66fbadfca4b7" class="">A &quot;complete&quot; computer including the hardware, the operating system (main software), and peripheral equipment required and used for &quot;full&quot; operation can be referred to as a computer system.</p><h2 id="c053e868-7b72-4464-9074-9b252509d8cf" class="">Q2: What is multiprocessing operating system?</h2><p id="ab76887e-babc-4876-b3cd-5e3958026144" class="">In a uni-processor system, only one process executes at a time.</p><p id="5352eb2d-d28d-4e7c-8650-323149dcc2b3" class="">Multiprocessing is the use of two or more CPUs (processors) within a single Computer system. The term also refers to the ability of a system to support more than one processor within a single computer system. Now since there are multiple processors available, multiple processes can be executed at a time. These multi processors share the computer bus, sometimes the clock, memory and peripheral devices also.</p><h2 id="3a4177c1-0b29-48f3-8008-66110b594cd5" class="">Q3: What is volatile memory?</h2><p id="be432c86-9177-4a83-be49-7feb1f24af4b" class="">It is the memory hardware that fetches/stores data at a high-speed. It is also referred as temporary memory. The data within the volatile memory is stored till the system is capable of, but once the system is turned off the data within the volatile memory is deleted automatically. RAM (Random Access Memory) and Cache Memory are some common examples of volatile memory. Here, data fetch/store is fast and economical.</p><h2 id="88ebeed8-3f54-4bef-b2a6-e342f4b800d3" class="">Q4: What is non volatile memory?</h2><p id="3fbda0ef-1faa-4048-b4be-e8841c40b368" class=""><strong>Non-Volatile Memory:</strong></p><p id="16de3c08-bc86-43c8-aa5f-331fc7350b99" class="">It is the type of memory in which data or information is not lost within the memory even power is shut-down. ROM is the most common example of non-volatile memory. It’s not economical and slow in fetch/store as compared to volatile memory however stores a higher volume of data. All such information that needs to be stored for an extended amount of time is stored in non-volatile memory. Non-volatile memory has a huge impact on a system’s storage capacity.</p><h2 id="9a51a2c0-8280-4ebe-bb03-0fe5cb205e05" class="">Q5: What is memory?</h2><p id="6226314b-17ab-4ba8-a740-d04befd6c668" class="">A memory is just like a human brain. It is used to store data and instructions. Computer memory is the storage space in the computer, where data is to be processed and instructions required for processing are stored. The memory is divided into large number of small parts called cells. Each location or cell has a unique address, which varies from zero to memory size minus one.</p><h2 id="a6563122-8ce0-4987-b332-24c027acd6e7" class="">Q6: List the types of computers.</h2><figure id="9782e8d8-e815-4200-bdea-38bcedc701a4" class="image"><a href="Computer%20Examination%20Answers%209782e8d8e8154200bdea38bcedc701a4/Untitled.png"><img style="width:1284px" src="Computer%20Examination%20Answers%209782e8d8e8154200bdea38bcedc701a4/Untitled.png"/></a></figure><h2 id="39317f26-9e26-4ee3-b4a9-e1c51287b9fa" class="">Q7: Describe DOS Operating System.</h2><p id="d39dfc79-e966-433a-bf86-4b4c7c0e3653" class="">Any operating system which runs from the hard disk drive is termed a Disk Operating System ( D.O.S ). This also refers to the specific family of disk operating systems which is also known as MS-DOS or Microsoft disk operating systems. Anything which commands and controls the computer’s hardware and its peripheral devices with control over the program and its functionality is known as the operating system. This operating system which runs through the hard disk is known as a disk operating system. For the very first time, It was made and introduced for IBM by Microsoft which was known as IBM PC DOS in the year 1981.</p><blockquote id="15224fdd-f0d2-42fa-bb55-a493fac62759" class="">Section B</blockquote><h2 id="d6af29ac-1238-4190-8499-b6675c9f4919" class="">Q1: Draw the Block diagram of a digital computer. Discuss its components in brief.</h2><figure id="67e11c7c-30e4-4f70-85dc-54f93d2ae822" class="image"><a href="Computer%20Examination%20Answers%209782e8d8e8154200bdea38bcedc701a4/6a42b3d72f58b424a1e53ca25e30e6e6.jpg"><img style="width:1080px" src="Computer%20Examination%20Answers%209782e8d8e8154200bdea38bcedc701a4/6a42b3d72f58b424a1e53ca25e30e6e6.jpg"/></a></figure><p id="7c25ce1e-d0ad-45fa-9b6c-6af5608370ba" class=""><strong>1. Input: </strong>This is the process of entering data and programs into the computer system. The input unit takes data from us to the computer in an organized manner for processing.</p><p id="ba5b8d05-0e80-42b8-a7bb-7ba7e4c2d464" class=""><strong>2. Storage: </strong>The process of saving data and instructions permanently is known as storage. Data has to be fed into the system before the actual processing starts. It is because the processing speed of the Central Processing Unit (CPU) is so fast that the data has to be provided to the CPU with the same speed.</p><p id="f2599213-7b8c-4db6-afb6-b5fd43a97706" class="">The storage unit performs the following major functions:</p><ul id="d6d5029b-1562-49f7-9916-79e5aa82a42c" class="bulleted-list"><li>All data and instructions are stored here before and after processing.</li></ul><ul id="43b19c11-bf01-4701-951d-04e8c78fe505" class="bulleted-list"><li>Intermediate results of processing are also stored here.</li></ul><p id="fe8d3964-72f3-43a0-9768-0df58af0b509" class=""><strong>3. Processing: </strong>The task of performing operations like arithmetic and logical operations is called processing. The Central Processing Unit (CPU) takes data and instructions from the storage unit and makes all sorts of calculations based on the instructions given and the type of data provided.</p><p id="c76b15ae-35d4-4a65-ac9d-d7396facbabb" class=""><strong>4. Output: </strong>This is the process of producing results from the data for getting useful information. Similarly, the output produced by the computer after processing must also be kept somewhere inside the computer before being given to you in a human-readable form.</p><p id="85e2951f-08fd-4207-983b-1613f1733634" class=""><strong>5. Control: </strong>The manner how instructions are executed and the above operations are performed. Controlling of all operations like input, processing, and output are performed by the control unit.</p><h2 id="d3818b1e-445e-4e23-8bac-f5d16576978f" class="">Q2: What do you mean by data organization? Explain it with an example.</h2><p id="6881bb97-9d81-44dc-b2a6-cafa86c7aeab" class="">Data organization is the practice of categorizing and classifying data to make it more usable. Similar to a file folder, where we keep important documents, you’ll need to arrange your data in the most logical and orderly fashion, so you — and anyone else who accesses it — can easily find what they’re looking for.</p><p id="d5ce6750-d1b9-4bc7-a2bf-b0682041a948" class="">Data organization, in broad terms, refers to the method of classifying and organizing data sets to make them more useful. Some IT experts apply this primarily to physical records, although some types of data organization can also be applied to digital records.</p><p id="4cf15c44-64dd-4f82-92f0-e7f712ddb9f9" class="">Examples of organizational data include: job family, job role, organization, line of business, cost center, location, region, layer, level, number of direct reports, and manager. This data is supplied to Workplace Analytics at the individual level, which means that these attributes provide context to each person in the dataset.</p><p id="a74f2cf8-a9bf-4100-b0c4-36f52c45b25a" class="">
+</p><h2 id="2391a378-0bb0-4099-8172-716399ddee2d" class="">Q4: Write short notes on:</h2><h3 id="5b27140f-e442-4ce6-bc9d-b81101f5b73a" class="">a. Start button</h3><p id="dc415e1c-339f-4eae-add3-c3e23346d23c" class="">The Start menu is a graphical user interface element used in Microsoft Windows since Windows 95 and some other operating systems. It provides a central launching point for computer programs and performing other tasks.</p><h3 id="2fdbedac-73c1-4fba-847e-75fa3fe2a879" class=""> b. Taskbar</h3><p id="4e1c75c6-740e-4c5e-89d9-67dc6a4eecb9" class="">A taskbar is an element of a graphical user interface that has various purposes. It typically shows which programs are currently running. The specific design and layout of the taskbar vary between individual operating systems but generally assumes the form of a strip located along one edge of the screen.</p><h3 id="95f1f205-279d-4338-9a78-529448144945" class=""> c. Status bar</h3><p id="0308d913-7cef-437a-b059-7153153618e7" class="">A status bar is a graphical control element that poses an information area typically found at the window&#x27;s bottom. It can be divided into sections to group information. Its job is primarily to display information about the current state of its window, although some status bars have extra functionality.</p><h3 id="cd0158c0-9fb1-4d6e-97e8-7780c14dae54" class=""> d. Windows application</h3><p id="298d04e9-db7f-4038-94fe-2c0d30fe881d" class="">Application software is a program or group of programs designed for end-users. Examples of an application include a word processor, a spreadsheet, an accounting application, a web browser, an email client, a media player, a file viewer, simulators, a console game, or a photo editor.</p><h3 id="ff65f138-ab07-4f4f-8850-78b4e06edfae" class=""> e. Icons</h3><p id="b2b77f4f-c1b9-4f81-b12e-fac017f6ee46" class="">In computing, an icon is a pictogram or ideogram displayed on a computer screen to help the user navigate a computer system.</p><h3 id="672a83a9-14a7-4e88-bc90-daf59f3f861a" class=""> f. Desktop</h3><p id="c93ae704-693b-427b-b630-63fa5a9fe77f" class="">A desktop computer is a personal computer designed for regular use at a single location on or near a desk or table due to its size and power requirements.</p></div></article></body></html>
