@@ -1,0 +1,628 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>English Exam Answers</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3653d449-b332-4db7-91e0-ce23286a9afb" class="page sans"><header><h1 class="page-title">English Exam Answers</h1></header><div class="page-body"><h2 id="5958ef48-acf1-4f8e-b501-add772c673af" class="">Q1: What are the techniques to improve communication?</h2><p id="5109266f-9994-4e59-a864-f3c5305c2600" class="">Having good communication skills is important. They can help us with presentations in class, during job interviews, when handling arguments, and in a variety of other situations.</p><ul id="4fbbad7e-a06f-4ec3-b194-af629d8987c9" class="bulleted-list"><li><strong>Engaging The Audience:</strong> One technique to help with this is to consciously look into one of the listener’s eyes and then move to the other eye. Going back and forth between the two makes your eyes appear to sparkle. Another trick is to imagine a letter “T” on the listener’s face, with the crossbar being an imaginary line across the eye brows and the vertical line coming down the center of the nose. Keep your eyes scanning that “T” zone.</li></ul><ul id="79b22a0c-3aff-4a66-8052-8df97cab2bb9" class="bulleted-list"><li><strong>Using Gestures:</strong> These include gestures with the hands and face. Make your whole body talk. Use smaller gestures for individuals and small groups. The gestures should get larger as the group that one is addressing size increases.</li></ul><ul id="b3f9d08e-4001-4ffb-937e-f2c7af7826b3" class="bulleted-list"><li><strong>Enunciate your words.</strong> Speak clearly and don’t mumble. If people are always asking you to repeat yourself, try to do a better job of articulating yourself in a better manner.</li></ul><ul id="dfef45a7-8a62-4878-b142-99016ab354a1" class="bulleted-list"><li><strong>Pronounce your words correctly.</strong> People will judge your competency through your vocabulary. If you aren’t sure of how to say a word, don’t use it. Improve your vocabulary by reading new words in your daily routine. Look in the dictionary to help you learn how to pronounce a new word.</li></ul><ul id="d8140f6c-11c5-4f6c-939c-7513398cae21" class="bulleted-list"><li><strong>Use the right words.</strong> If you’re not sure of the meaning of a word, don’t use it. Grab a dictionary and start a daily habit of learning one new word per day. Use it sometime in your conversations during the day.</li></ul><ul id="12727056-8533-4ab4-9c20-8839dc24c033" class="bulleted-list"><li><strong>Slow your speech down.</strong> People will perceive you as nervous and unsure of yourself if you talk fast. However, be careful not to slow down to the point where people begin to finish your sentences just to help you finish.</li></ul><ul id="6e92715e-dac7-45b4-95db-7295555babaa" class="bulleted-list"><li><strong>Develop your voice.</strong> A high or whiny voice is not perceived to be one of authority. A high and soft voice can make you sound like prey to an aggressive co-worker or make others not take you seriously. Begin doing exercises to lower the pitch of your voice. Try singing, but do it an octave lower on all your favorite songs. Practice this and, after some time, your voice will begin to lower.</li></ul><h2 id="7eb56688-e1ba-4d4b-a503-5c9f81b13fcf" class="">Q2: What is the importance of Oculesics in a face to face communication?</h2><p id="24004970-2556-4b05-9dea-ae6c0b9f580a" class="">The study of eye behavior is called Oculesics, and sometimes it is considered a subset of kinesics communication. The most important aspect of Oculesics is eye contact that opens communication channels, signals availability for interaction, listening, immediacy, and intimacy. The absence of eye contact engenders negative attributions including rudeness, deceptiveness, insincerity, unfriendliness, and timidity.</p><h2 id="a0b1a95a-2005-4977-94f6-dc8169265fcd" class="">Q3: Explain the essential parts of a letter.</h2><p id="c13899e8-9c77-4325-a426-18d884d250e3" class="">The seven parts of a business letter include the heading, date, address of recipient, salutation, body, complimentary close, and signature.</p><p id="87d60fee-31dd-4669-95ca-877e8714bce3" class=""><strong>Heading</strong></p><p id="cf262859-0c6e-4af1-b3c2-b9923ae7dbbb" class="">Most professional business correspondence is printed on a letterhead template. A letterhead contains the company name, address, and contact information. An individual may also create a letterhead that contains his name and personal contact information.</p><p id="6fe8a97a-2c94-4f87-b013-776c16ee1fb2" class=""><strong>Date</strong></p><p id="8881c59d-0e5e-49cd-a0da-6e650f1c64fa" class="">Simply put, the date is the day the letter is sent. The most commonly used data format is June 21, 2011.</p><p id="1009cf6d-033c-4919-941c-40b6754d7fb9" class=""><strong>Address</strong></p><p id="959f2766-106b-4e1d-9e7f-cde0c40a297f" class="">This is the address of the recipient. If applicable, the first line in the address block should include the recipient&#x27;s name and title, and the second line should state the recipient&#x27;s company or business. The third and fourth lines are designated for the actual address.</p><p id="86a5bf15-d8ae-4cc4-bea6-ab234082f05f" class=""><strong>Salutation</strong></p><p id="44181989-f875-487d-8054-64159ef495f3" class="">Different circumstances determine which salutation or greeting is most appropriate. Use &quot;Dear&quot; when the recipient&#x27;s name or title is known. Examples include &quot;Dear Mr. Doe&quot; or &quot;Dear Sales Director.&quot; When the name or title is unknown, use &quot;To Whom It May Concern.&quot;</p><p id="807ab1cf-2b54-4394-9b52-85a1c1fe4ab7" class=""><strong>Body</strong></p><p id="febd2437-f55f-4341-b596-c441f62a2014" class="">The body is the longest part of a letter and is usually divided into three subcategories: introduction, main content, and summary. The introductory paragraph states the purpose of the letter. The main content conveys all necessary detailed information and has no set length requirements. The last paragraph summarizes the information provided, restates the letter intent, and offers either instructions or an inquiry regarding follow-up correspondence.</p><p id="03b0906e-57a9-4d54-9dd1-759645594200" class=""><strong>Complimentary Close</strong></p><p id="4ee382cc-2f97-4a60-ab1a-a1cd5de60c06" class="">The complimentary close is a word or short phrase that means &quot;goodbye.&quot; &quot;Sincerely&quot; is the most common closing remark. Others include &quot;cordially,&quot; &quot;best wishes,&quot; and &quot;best regards.&quot;</p><p id="ceec2959-c979-4e17-b334-ffec8fad4309" class=""><strong>Signature</strong></p><p id="329329e4-b3d1-4fc5-9050-98d6e916a793" class="">In letters that are sent via email, the signature is simply the sender&#x27;s name and title typed immediately below the complimentary close.</p><h2 id="02009d03-7945-4ceb-8e15-3d9f8805edfb" class="">Q4: Write a short note on chronemics.</h2><p id="26063e07-8ee4-4fdf-8309-0d45cc6890b3" class="">Chronemics is the study of how time is used in communication. Time can be used as a communication tool in many ways, from punctuality to expectations around waiting and response time, to general principles around time management.
+Chronemics has become an area of study primarily for anthropologists, who look at cultural norms around the use of time, and the way cultures can vary and converge around different norms. More recently, chronemics appears to be branching out into other disciplines, such as the more business-oriented study of organizational behavior.</p><h2 id="8a0181d4-bded-4283-8972-4d68de32c790" class="">Q5: Explain homophones with an example.</h2><p id="83af8e97-e04a-4387-b482-ccbea1e09a6b" class="">A <strong>homophone</strong> is a word that is pronounced the same (to a varying extent) as another word but differs in meaning. A homophone may also differ in spelling. The two words may be spelled the same, as in <em>rose</em> (flower) and <em>rose</em> (past tense of <em>rising</em>), or differently, as in <em>rain</em>, <em>reign</em>, and <em>rein</em>. The term &quot;homophone&quot; may also apply to units longer or shorter than words, such as phrases, letters, or groups of letters that are pronounced the same as another phrase, letter, or group of letters. Any unit with this property is said to be &quot;homophonous&quot;.</p><p id="ac787c6b-d3ba-4f60-a6cb-5f2b128080b1" class="">Homophones that are spelled the same are also both homographs and homonyms.</p><h2 id="6eda461f-265c-4331-b9dd-53e90cba2d21" class="">Q6: What is you-attitude in letter writing?</h2><p id="0a1e3bd9-fdec-4b6c-9b21-75deaa440bbb" class="">“You-attitude,” a phrase used by Kitty O. Locker in Business and Administrative Communication, refers to a style of writing that puts readers’ needs first. Specifically, you-attitude “emphasiz[es] what the reader wants to know, respecting the reader’s intelligence, and protecting the reader’s ego.” It details five strategies for achieving you-attitude in your writing:</p><ol id="0f1791bd-d398-4fe6-b57b-cf04cdaa73cf" class="numbered-list" start="1"><li>Talk about the reader, not about yourself.</li></ol><ol id="c43e67cb-2dcb-4369-a37a-5f3509c45ed4" class="numbered-list" start="2"><li>Refer to the reader’s request or order specifically.</li></ol><ol id="750ac7f5-df32-4ab5-841d-1cd2f7c690f0" class="numbered-list" start="3"><li>Don’t talk about feelings, except to congratulate or offer sympathy. In most professional settings and situations, your feelings are irrelevant.</li></ol><ol id="9bcccb84-1d09-49c0-b858-dbc330c646ca" class="numbered-list" start="4"><li>Use you more often than I in positive situations. Doing so accentuates the good news associated with the reader.</li></ol><ol id="73a44061-0871-48b8-b072-b78d3b58f767" class="numbered-list" start="5"><li>Avoid the word you in delivering bad news, as it can be interpreted as accusatory and over-accentuate the negative.</li></ol></div></article></body></html>
