@@ -1,17 +1,811 @@
-<!DOCTYPE html>
-<html lang="en">
+<html><head><meta http-equiv="refresh" content="20"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>C Model Answers - Part C</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="300">
-    <title>BCA Semester 1st POM 🤠 Answers</title>
-    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
 
-<body>
-    <h1 style="font-size: 5rem" class="text">Please get cool :)</h1s>
-</body>
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
 
-</html>
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ffe7f48c-2142-48de-ac4e-a65539aa6b3d" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🐴</span></div><h1 class="page-title">C Model Answers - Part C</h1></header><div class="page-body"><h3 id="b255cb56-bcfe-4cc1-8c8b-980488a47995" class="">Question 1: Explain the types of operators found in C.</h3><ol id="68701d57-5fc3-4c8f-9217-12f08eb95a4f" class="numbered-list" start="1"><li><strong>Arithmetic Operators</strong>: These are the operators used to perform arithmetic/mathematical operations on operands. Examples: (+, -, *, /, %,++,–). The arithmetic operator is of two types:<ol id="2dc1053c-3261-484d-b854-0d03ff7ee199" class="numbered-list" start="1"><li><strong>Unary Operators</strong>: Operators that operate or work with a single operand are unary operators. For example: (++ , –)</li></ol><ol id="52992c4a-7508-4938-8da2-022482a88aa0" class="numbered-list" start="2"><li><strong>Binary Operators</strong>: Operators that operate or work with two operands are binary operators. For example: (+ , – , * , /)</li></ol></li></ol><ol id="ffededa1-bdd6-43e8-a636-0cc730759f18" class="numbered-list" start="2"><li><strong>Relational Operators</strong>: These are used for comparison of the values of two operands. For example, checking if one operand is equal to the other operand or not, an operand is greater than the other operand or not, etc. Some of the relational operators are (==, &gt;= , &lt;= ).</li></ol><ol id="d1003487-604c-474e-9112-6976b323255a" class="numbered-list" start="3"><li><strong>Logical Operators</strong>: Logical Operators are used to combining two or more conditions/constraints or to complement the evaluation of the original condition in consideration. The result of the operation of a logical operator is a boolean value either true or false. For example, the <strong>logical AND</strong> represented as <strong>‘&amp;&amp;’ operator in C or C++</strong> returns true when both the conditions under consideration are satisfied. Otherwise, it returns false. Therefore, a &amp;&amp; b returns true when both a and b are true (i.e. non-zero).</li></ol><ol id="d06889a8-0589-48e1-a3fe-1a31570a6992" class="numbered-list" start="4"><li><strong>Bitwise Operators</strong>: The Bitwise operators are used to perform bit-level operations on the operands. The operators are first converted to bit-level and then the calculation is performed on the operands. The mathematical operations such as addition, subtraction, multiplication, etc. can be performed at bit-level for faster processing. For example, the <strong>bitwise AND</strong> represented as <strong>&amp; operator in C or C++</strong> takes two numbers as operands and does AND on every bit of two numbers. The result of AND is 1 only if both bits are 1.</li></ol><ol id="e77f638d-45d4-44e0-80f6-93beb85d9487" class="numbered-list" start="5"><li><strong>Assignment Operators</strong>: Assignment operators are used to assigning value to a variable. The left side operand of the assignment operator is a variable and the right side operand of the assignment operator is a value. The value on the right side must be of the same data type as the variable on the left side otherwise the compiler will raise an error. Different types of assignment operators are shown below:</li></ol><h3 id="02948294-4193-47c6-8db0-a33b26303777" class="">Question 2: WAP for matrix multiplication.</h3><p id="c9bf934e-4e9c-4b57-88fb-b4d53e110f41" class="">We can add, subtract, multiply and divide 2 matrices. To do so, we are taking input from the user for row number, column number, first matrix elements and second matrix elements. Then we are performing multiplication on the matrices entered by the user.</p><p id="1f2c6846-3910-4f49-b97a-dd325ac14078" class="">In matrix multiplication, the <em>first matrix one-row element is multiplied by the second matrix of all column elements</em>.</p><pre id="715aaf85-dbfe-45d7-aa10-9da8b84341a3" class="code"><code>#include&lt;stdio.h&gt;
+
+#include&lt;stdlib.h&gt;
+
+int main() {
+  int a[10][10], b[10][10], mul[10][10], r, c, i, j, k;
+  system(&quot;cls&quot;);
+  printf(&quot;enter the number of row=&quot;);
+  scanf(&quot;%d&quot;, &amp; r);
+  printf(&quot;enter the number of column=&quot;);
+  scanf(&quot;%d&quot;, &amp; c);
+  printf(&quot;enter the first matrix element=\n&quot;);
+  for (i = 0; i &lt; r; i++) {
+    for (j = 0; j &lt; c; j++) {
+      scanf(&quot;%d&quot;, &amp; a[i][j]);
+    }
+  }
+  printf(&quot;enter the second matrix element=\n&quot;);
+  for (i = 0; i &lt; r; i++) {
+    for (j = 0; j &lt; c; j++) {
+      scanf(&quot;%d&quot;, &amp; b[i][j]);
+    }
+  }
+
+  printf(&quot;multiply of the matrix=\n&quot;);
+  for (i = 0; i &lt; r; i++) {
+    for (j = 0; j &lt; c; j++) {
+      mul[i][j] = 0;
+      for (k = 0; k &lt; c; k++) {
+        mul[i][j] += a[i][k] * b[k][j];
+      }
+    }
+  }
+  //for printing result    
+  for (i = 0; i &lt; r; i++) {
+    for (j = 0; j &lt; c; j++) {
+      printf(&quot;%d\t&quot;, mul[i][j]);
+    }
+    printf(&quot;\n&quot;);
+  }
+  return 0;
+}</code></pre><h3 id="e888a6da-0d13-44a9-bd45-94c79608f301" class="">Question 3: WAP for Bubble Sorting. Explain with example.</h3><pre id="d5d43de4-3fd5-44ca-933a-2d086444b43a" class="code"><code>// C program for implementation of Bubble sort
+#include &lt;stdio.h&gt;
+
+void swap(int *xp, int *yp)
+{
+	int temp = *xp;
+	*xp = *yp;
+	*yp = temp;
+}
+
+// A function to implement bubble sort
+void bubbleSort(int arr[], int n)
+{
+int i, j;
+for (i = 0; i &lt; n-1; i++)	
+
+	// Last i elements are already in place
+	for (j = 0; j &lt; n-i-1; j++)
+		if (arr[j] &gt; arr[j+1])
+			swap(&amp;arr[j], &amp;arr[j+1]);
+}
+
+/* Function to print an array */
+void printArray(int arr[], int size)
+{
+	int i;
+	for (i=0; i &lt; size; i++)
+		printf(&quot;%d &quot;, arr[i]);
+	printf(&quot;\n&quot;);
+}
+
+// Driver program to test above functions
+int main()
+{
+	int arr[] = {64, 34, 25, 12, 22, 11, 90};
+	int n = sizeof(arr)/sizeof(arr[0]);
+	bubbleSort(arr, n);
+	printf(&quot;Sorted array: \n&quot;);
+	printArray(arr, n);
+	return 0;
+}</code></pre><p id="9780983e-6fc4-4d0f-ae65-ed51b94e5656" class=""><strong>Example:</strong></p><p id="bf67d71e-21d7-48b2-a477-a5fb96b6b817" class=""><strong>First Pass: </strong>( <strong>5</strong> <strong>1</strong> 4 2 8 ) –&gt; ( <strong>1</strong> <strong>5</strong> 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 &gt; 1.( 1 <strong>5</strong> <strong>4</strong> 2 8 ) –&gt;  ( 1 <strong>4</strong> <strong>5</strong> 2 8 ), Swap since 5 &gt; 4( 1 4 <strong>5</strong> <strong>2</strong> 8 ) –&gt;  ( 1 4 <strong>2</strong> <strong>5</strong> 8 ), Swap since 5 &gt; 2( 1 4 2 <strong>5</strong> <strong>8</strong> ) –&gt; ( 1 4 2 <strong>5</strong> <strong>8</strong> ), Now, since these elements are already in order (8 &gt; 5), algorithm does not swap them.</p><p id="81e93b1e-1738-4be1-9180-4a368d807cb4" class=""><strong>Second Pass: </strong>( <strong>1</strong> <strong>4</strong> 2 5 8 ) –&gt; ( <strong>1</strong> <strong>4</strong> 2 5 8 )( 1 <strong>4</strong> <strong>2</strong> 5 8 ) –&gt; ( 1 <strong>2</strong> <strong>4</strong> 5 8 ), Swap since 4 &gt; 2( 1 2 <strong>4</strong> <strong>5</strong> 8 ) –&gt; ( 1 2 <strong>4</strong> <strong>5</strong> 8 )( 1 2 4 <strong>5</strong> <strong>8</strong> ) –&gt;  ( 1 2 4 <strong>5</strong> <strong>8</strong> )Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one <strong>whole</strong> pass without <strong>any</strong> swap to know it is sorted.</p><p id="854218c3-a446-4678-b1b5-d7e714270352" class=""><strong>Third Pass: </strong>( <strong>1</strong> <strong>2</strong> 4 5 8 ) –&gt; ( <strong>1</strong> <strong>2</strong> 4 5 8 )( 1 <strong>2</strong> <strong>4</strong> 5 8 ) –&gt; ( 1 <strong>2</strong> <strong>4</strong> 5 8 )( 1 2 <strong>4</strong> <strong>5</strong> 8 ) –&gt; ( 1 2 <strong>4</strong> <strong>5</strong> 8 )( 1 2 4 <strong>5</strong> <strong>8</strong> ) –&gt; ( 1 2 4 <strong>5</strong> <strong>8</strong> )</p><h3 id="0ec396cd-1357-475b-a9e5-308d7e2479fc" class="">Question 4: WAP for Selection Sorting. Explain with example.</h3><p id="22fa4e50-9872-4bc9-8c6e-9d0b5b05b09b" class="">Selection sort is another algorithm that is used for sorting. This sorting algorithm, iterates through the array and finds the smallest number in the array and swaps it with the first element if it is smaller than the first element. Next, it goes on to the second element and so on until all elements are sorted.</p><p id="dba17b04-8c23-4539-8326-592faa984655" class=""><strong>Example of Selection Sort</strong></p><p id="e0e07fc4-c74a-4b36-aa45-f1c6579a302b" class="">Consider the array:</p><p id="a94a08a0-85e4-4805-b48e-d7c8e1cc8491" class="">[10,5,2,1]</p><p id="688cfb6d-6a2f-4d7c-a38a-05c8ab10de3e" class="">The first element is 10. The next part we must find the smallest number from the remaining array. The smallest number from 5 2 and 1 is 1. So, we replace 10 by 1.</p><p id="105006a3-fa84-4354-a195-2d0c1421ad6c" class="">The new array is [1,5,2,10] Again, this process is repeated.</p><p id="e5bf68fe-83a4-4e57-85a9-fe1984da1111" class="">Finally, we get the sorted array as [1,2,5,10].</p><p id="6e2e5c9b-d85e-405d-87df-10f9f3fce544" class="">Let us continue with this article on Selection Sort in C and see how the algorithm works,</p><p id="9f83917e-498b-4e08-9f7d-18dfd2313889" class=""><strong>Algorithm for Selection Sort:</strong></p><p id="19500895-13b7-4331-ac8c-f7628bf5b651" class=""><strong>Step 1</strong> − Set min to the first location</p><p id="ec6c9c69-2b96-4554-8e7a-ac5e351e89fd" class=""><strong>Step 2</strong> − Search the minimum element in the array</p><p id="5e59f057-9587-4056-97d6-06abee76a0da" class=""><strong>Step 3</strong> – swap the first location with the minimum value in the array</p><p id="48f83406-d595-421b-a5a5-34de4ef2e01f" class=""><strong>Step 4</strong> – assign the second element as min.</p><p id="c94184ab-4ed7-4a22-b2b4-56855253ab83" class=""><strong>Step 5</strong> − Repeat the process until we get a sorted array.</p><p id="d1f9d535-9cb4-4406-9b02-be3357bcf517" class="">Let us take a look at the code for the the programmatic implementation,</p><pre id="fa9e129b-c74d-4627-8c7c-8059a779f04e" class="code"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a[100], n, i, j, position, swap;
+    printf(&quot;Enter number of elementsn&quot;);
+    scanf(&quot;%d&quot;, &amp; n);
+    printf(&quot;Enter %d Numbersn&quot;, n);
+    for (i = 0; i &lt; n; i++)
+      scanf(&quot;%d&quot;, &amp; a[i]);
+    for (i = 0; i &lt; n - 1; i++) {
+      position = i;
+      for (j = i + 1; j &lt; n; j++) {
+        if (a[position] &gt; a[j])
+          position = j;
+      }
+      if (position != i) {
+        swap = a[i];
+        a[i] = a[position];
+        a[position = swap;
+        }
+      }
+      printf(&quot;Sorted Array:n&quot;);
+      for (i = 0; i &lt; n; i++)
+        printf(&quot;%dn&quot;, a[i]);
+      return 0;
+    }</code></pre><h3 id="090615aa-fb0b-4e5d-bb04-a3c679cd69a0" class="">Question 5: WAP that reads a string from the keyboard and finds whether it is palindrome or not?</h3><p id="99a22ad2-2ac5-4d47-baf2-8333355fcb42" class=""><strong>Algorithm:</strong></p><p id="a4969b7e-c6bd-4de5-972e-68625b0eedf8" class="">isPalindrome(str)</p><p id="adc2a314-79af-4284-a0ef-197e699ee4b2" class="">1) Find length of str. Let length be n.</p><p id="41101636-1a65-492f-a99e-d1820f33c4d2" class="">2) Initialize low and high indexes as 0 and n-1 respectively.</p><p id="0e0dcb7d-f864-4a6f-9518-a994b3896ae1" class="">3) Do following while low index ‘l’ is smaller than high index ‘h’.</p><p id="bd29c77e-dc14-4daf-ae36-4bfcd105903a" class="">a) If str[l] is not same as str[h], then return false.</p><p id="a47eb578-72e4-4977-8ac6-80b6b25e2ae6" class="">b) Increment l and decrement h, i.e., do l++ and h–.</p><p id="7754119f-61a7-45b8-9ef1-c0bcbe52491f" class="">4) If we reach here, it means we didn’t find a mis</p><pre id="f2ebeacb-70fd-4c82-a2f6-79a596d5893e" class="code"><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+// A function to check if a string str is palindrome
+void isPalindrome(char str[])
+{
+	// Start from leftmost and rightmost corners of str
+	int l = 0;
+	int h = strlen(str) - 1;
+
+	// Keep comparing characters while they are same
+	while (h &gt; l)
+	{
+		if (str[l++] != str[h--])
+		{
+			printf(&quot;%s is Not Palindrome&quot;, str);
+			return;
+		}
+	}
+	printf(&quot;%s is palindrome&quot;, str);
+}
+
+// Driver program to test above function
+int main()
+{
+	isPalindrome(&quot;abba&quot;);
+	isPalindrome(&quot;abbccbba&quot;);
+	isPalindrome(&quot;geeks&quot;);
+	return 0;
+}</code></pre><h3 id="0c0c6292-6609-439e-9a53-76b9ab79ecd3" class="">Question 6: Explain some string handling functions.</h3><p id="3b74f631-49c5-49b5-b7ac-12c34291af2c" class="">C programming language provides a set of pre-defined functions called string handling functions to work with string values. The string handling functions are defined in a header file called <code>string.h</code>. Whenever we want to use any string handling function we must include the header file called <code>string.h</code>.</p><figure id="16e971bb-2e82-47fa-8b02-3d14243fb8f8" class="image"><a href="C%20Model%20Answers%20-%20Part%20C%2016e971bb2e8247fa8b023d14243fb8f8/Untitled.png"><img style="width:1224px" src="C%20Model%20Answers%20-%20Part%20C%2016e971bb2e8247fa8b023d14243fb8f8/Untitled.png"/></a></figure><h3 id="6762a471-0900-486b-8736-83686a721106" class="">Question 7: Write a short note on software, pseudo code, generation of languages, error, and its type.</h3><p id="7d18cc80-2514-43c0-bb26-32f502693d61" class=""><strong>Pseudo Code:</strong> Pseudo code is a term which is often used in programming and algorithm based fields. It is a methodology that allows the programmer to represent the implementation of an algorithm. Simply, we can say that it’s the cooked up representation of an algorithm. Often at times, algorithms are represented with the help of pseudo codes as they can be interpreted by programmers no matter what their programming background or knowledge is. Pseudo code, as the name suggests, is a false code or a representation of code which can be understood by even a layman with some school level programming knowledge.</p><h3 id="1b4651f6-e90c-463b-a4f9-457f39fe8d33" class="">Question 8: Explain the flow chart in brief.</h3><h3 id="3ecc1486-e497-44c5-a2ac-df06646ffd87" class="">Question 9: Explain</h3><p id="ddcc79a6-5fed-4491-a9bc-87afc145f0f0" class=""><strong>(a) Loader</strong> → The loader is a special program that takes the input of object code from the linker, loads it to main memory, and prepares this code for execution by a computer. The loader allocates memory space to the program. Even it settles down symbolic reference between objects. It in charge of loading programs and libraries in the operating system. The embedded computer systems don’t have loaders.</p><p id="1e312e00-7604-4735-b8bd-f135df35b249" class=""><strong>(b) Linker</strong> → A linker is a special program that combines the object files, generated by the compiler/assembler, and other pieces of code to originate an executable file have .exe extension. In the object file, the linker searches and append all libraries needed for the execution of the file. It regulates the memory space that code from each module will hold. It also merges two or more separate object programs and establishes links among them.</p><p id="b18a79a8-c9f8-41e3-bcee-e3408d142164" class=""><strong>(c) Assembler</strong> → The Assembler is used to translate the program written in Assembly language into machine code. The source program is an input of an assembler that contains assembly language instructions. The output generated by the assembler is the object code or machine code understandable by the computer.</p><p id="cca4010f-a95a-40e6-bcb6-21d13fb292dc" class=""><strong>(d) Compiler</strong> → The language processor that reads the complete source program written in high-level language as a whole in one go and translates it into an equivalent program in machine language is called a Compiler.</p><p id="e0d0ddce-817c-40b2-8017-ac77442fd1b5" class=""><strong>(e) Interpreter</strong> → The translation of a single statement of source program into machine code is done by a language processor and executes immediately before moving on to the next line is called an interpreter. If there is an error in the statement, the interpreter terminates its translating process at that statement and displays an error message. The interpreter moves on to the next line for execution only after the removal of the error. An Interpreter directly executes instructions written in a programming or scripting language without previously converting them to an object code or machine code.</p><h3 id="8514c33b-6835-4d9f-b8c7-058d3e0547a1" class="">Question 10: Explain preprocessor and its types in detail.</h3><p id="8b085ade-7387-4606-bc9a-fcca75c8fc8b" class="">The <strong>C Preprocessor</strong> is not a part of the compiler, but is a separate step in the compilation process. In simple terms, a C Preprocessor is just a text substitution tool and it instructs the compiler to do required pre-processing before the actual compilation. We&#x27;ll refer to the C Preprocessor as CPP.</p><p id="7c1aa43c-2afd-4d1c-a438-c2a486616934" class="">All preprocessor commands begin with a hash symbol (#). It must be the first nonblank character, and for readability, a preprocessor directive should begin in the first column. The following section lists down all the important preprocessor directives:</p><figure id="74c9dd17-b6bf-4c51-93f0-bdbe2b939dfb" class="image"><a href="C%20Model%20Answers%20-%20Part%20C%2016e971bb2e8247fa8b023d14243fb8f8/Untitled%201.png"><img style="width:934px" src="C%20Model%20Answers%20-%20Part%20C%2016e971bb2e8247fa8b023d14243fb8f8/Untitled%201.png"/></a></figure><h3 id="3110a0f3-2f71-47b1-9075-428c3ba6066c" class="">Question 11: W.A.P. in C for addition of two matrix.</h3><pre id="b55f2b0f-aa95-405f-9704-ac978475430b" class="code"><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+void main()
+{
+	int a[2][3],b[2][3],c[2][3],i,j;
+	clrscr();
+	printf(&quot;\nENTER VALUES FOR MATRIX A:\n&quot;);
+	for(i=0;i&lt;2;i++)
+		for(j=0;j&lt;3;j++)
+			scanf(&quot;%d&quot;,&amp;a[i][j]);
+	printf(&quot;\nENTER VALUES FOR MATRIX B:\n&quot;);
+	for(i=0;i&lt;2;i++)
+		for(j=0;j&lt;3;j++)
+			scanf(&quot;%d&quot;,&amp;b[i][j]);
+	for(i=0;i&lt;2;i++)
+		for(j=0;j&lt;3;j++)
+			c[i][j]=a[i][j]+b[i][j];
+	printf(&quot;\nTHE VALUES OF MATRIX C ARE:\n&quot;);
+	for(i=0;i&lt;2;i++)
+        {
+		for(j=0;j&lt;3;j++)
+			printf(&quot;%5d&quot;,c[i][j]);
+		printf(&quot;\n&quot;);
+	}
+	getch();
+}</code></pre><h3 id="1ddb2421-b543-4ccf-b276-d6a36bead68a" class="">Question 12: Explain Type Conversion.</h3><p id="b9e43ba7-8cc1-4bb7-a5c3-99592f7d57e6" class="">Type conversion basically means converting data of one type into another. There are two types of type conversion:</p><p id="afcff4f7-df50-486e-ae7a-e5ff5bcc1d0c" class="">1) <strong>Implicit Type Conversion</strong></p><p id="dac73d81-16fc-49b4-b863-b2d1531347ab" class="">Also known as ‘automatic type conversion’.</p><ul id="60037882-5d09-4320-b5ad-5a5501350a04" class="bulleted-list"><li>Done by the compiler on its own, without any external trigger from the user.</li></ul><ul id="aae03e0b-18aa-42f0-9244-31842aced6c1" class="bulleted-list"><li>Generally takes place when in an expression more than one data type is present. In such a condition type conversion (type promotion) takes place to avoid loss of data.</li></ul><ul id="a70e66d7-5c4b-494d-bb05-cfa385a0921e" class="bulleted-list"><li>It is possible for implicit conversions to lose information, signs can be lost (when signed is implicitly converted to unsigned), and overflow can occur (when long long is implicitly converted to float).</li></ul><ul id="96833085-d8ca-4936-a579-31dac94e574a" class="bulleted-list"><li>All the data types of the variables are upgraded to the data type of the variable with largest data type.</li></ul><pre id="e6d8e27d-3de6-4715-912f-493cb02065d6" class="code"><code>			bool -&gt; char -&gt; short int -&gt; int -&gt; 
+      unsigned int -&gt; long -&gt; unsigned -&gt; 
+      long long -&gt; float -&gt; double -&gt; long double</code></pre><p id="f2b1f5b9-c2bd-4b99-926e-ca2f9f8c258d" class="">
+</p><p id="dcb85860-dfe4-47ae-a62d-57a5faf84e6f" class="">2) <strong>Explicit Type Conversion</strong></p><p id="1be5bb16-5d60-42ad-8cde-3c547f3e4da7" class="">This process is also called type casting and it is user defined. Here the user can type cast the result to make it of a particular data type.</p><p id="96a4dfe4-ef3a-4bc3-b27b-f373d8a1ac2a" class="">The syntax in C:</p><pre id="31deb80c-5358-439a-b67c-e1c498c9db86" class="code"><code>(type) expression</code></pre><p id="e3880f21-fde1-4618-8387-378000c8e2b4" class="">Advantages of Type Conversion</p><ul id="ec83779b-4147-4e68-b479-9430be107073" class="bulleted-list"><li>This is done to take advantage of certain features of type hierarchies or type representations.</li></ul><ul id="c083677f-ce22-4f49-a5df-b962b6f24cbd" class="bulleted-list"><li>It helps us to compute expressions containing variables of different data types.</li></ul><h3 id="d09dde5e-b05c-4a2d-84a7-f252dda931b2" class="">Question 13: Explain Formatted and Unformatted I/O functions.</h3><p id="97496ed7-407b-4ab3-b5de-977f0961f02f" class="">Formatted console input/output functions are used to take one or more inputs from the user at console and it also allows us to display one or multiple values in the output to the user at the console.</p><p id="7cb797b1-486d-4747-bd86-e146496e2514" class="">Some of the most important formatted console input/output functions are:</p><ul id="9e67306e-7328-40c0-9827-27701db67217" class="bulleted-list"><li><strong>scanf()</strong></li></ul><ul id="bfdfb178-59c0-43ac-9349-f41ced248e0f" class="bulleted-list"><li><strong>printf()</strong></li></ul><ul id="11b3b57c-cab6-4dba-b9e4-fee870d21515" class="bulleted-list"><li><strong>sscanf()</strong></li></ul><ul id="e0098e7d-384c-48b4-a183-119ed8525481" class="bulleted-list"><li><strong>sprintf()</strong></li></ul><p id="b713b02a-a62e-40dd-bfa4-040c65a969cb" class="">Unformatted console input/output functions are used to read a <em><strong>single</strong></em> input from the user at the console and it also allows us to display the value in the output to the user at the console. Some of the most important formatted console input/output functions are:</p><ul id="28caab96-9177-43d6-8281-0d524747034d" class="bulleted-list"><li><strong>getch()</strong></li></ul><ul id="882de63c-d153-475c-b3e2-92f04d105358" class="bulleted-list"><li><strong>getche()</strong></li></ul><ul id="4c17dd44-79b6-4a89-aaa7-c04eaad7b391" class="bulleted-list"><li><strong>getchar()</strong></li></ul><ul id="72b1d316-cd0b-4c7e-a88e-f65477f4eda6" class="bulleted-list"><li><strong>gets()</strong></li></ul><ul id="0a847e93-dd1e-419f-b14b-a1165a63e861" class="bulleted-list"><li><strong>puts()</strong></li></ul><ul id="44a71bd1-4cf5-4b90-ba41-88ef0ee3c07b" class="bulleted-list"><li><strong>putch()</strong></li></ul><ul id="95faac2e-90b6-4b1c-981e-98a0de6f1e51" class="bulleted-list"><li><strong>putchar()</strong></li></ul><h3 id="3d2bc37f-8dfe-43ce-831c-ff475635cf42" class="">Question 14: Explain C tokens in detail.</h3><p id="de59c627-c235-428c-9159-c2a0f4d5ea67" class="">Tokens are the smallest elements of a program, which are meaningful to the compiler.</p><p id="4b6231c5-3859-4358-93bb-46da696c7751" class="">The following are the types of tokens: Keywords, Identifiers, Constant, Strings, Operators, etc.</p><ul id="ed1903ef-83db-4264-9707-8457b63905ee" class="bulleted-list"><li><strong>Keywords</strong></li></ul><p id="85e86f47-a58c-4391-868b-796e8462a689" class="">Keywords are predefined, reserved words in C and each of which is associated with specific features. These words help us to use the functionality of C language. They have special meaning to the compilers.</p><ul id="5d04c5e6-6043-4fe4-9467-23c40234ec73" class="bulleted-list"><li><strong>Identifiers</strong></li></ul><p id="ae6d0a8b-9457-417a-a046-d07fcb74d73a" class="">Each program element in C programming is known as an identifier. They are used for the naming of variables, functions, arrays, etc. These are user-defined names which consist of alphabets, number, underscore ‘_’. Identifier’s name should not be the same or same as keywords. Keywords are not used as identifiers.</p><ul id="1c19c3c6-be1b-4dde-b734-b05380ff9d98" class="bulleted-list"><li><strong>Strings</strong></li></ul><p id="98fa572d-ff27-49f6-8304-d1f0e338fc92" class="">A string is an array of characters ended with a null character(\0). This null character indicates that the string has ended. Strings are always enclosed with double quotes(&quot;&quot;).</p><h3 id="13a74d98-45dd-4aa2-bc1d-7a248b807d7e" class="">Question 15: W.A.P. in C to print the sum of digits of a given number.</h3><pre id="d01e9c70-5fb4-4bd0-8269-c6955c3fe449" class="code"><code>#include &lt;stdio.h&gt;
+
+int main() {
+  int n, t, sum = 0, remainder;
+
+  printf(&quot;Enter an integer\n&quot;);
+  scanf(&quot;%d&quot;, &amp; n);
+
+  t = n;
+
+  while (t != 0) {
+    remainder = t % 10;
+    sum = sum + remainder;
+    t = t / 10;
+  }
+
+  printf(&quot;Sum of digits of %d = %d\n&quot;, n, sum);
+
+  return 0;
+}</code></pre><h3 id="eab11358-9f72-4bd1-b6f0-1993c94b7e8e" class="">Question 16: Write short note on Linked list.</h3><p id="3162f680-be43-480b-ac31-162a9711bb10" class="">Like arrays, Linked List is a linear data structure. Unlike arrays, linked list elements are not stored at a contiguous location; the elements are linked using pointers.</p><figure id="b89ccddb-0ba4-40a8-8514-a012943ffb59" class="image"><a href="C%20Model%20Answers%20-%20Part%20C%2016e971bb2e8247fa8b023d14243fb8f8/Linkedlist.png"><img style="width:759px" src="C%20Model%20Answers%20-%20Part%20C%2016e971bb2e8247fa8b023d14243fb8f8/Linkedlist.png"/></a></figure><p id="94aa4165-9ed9-4fbf-9044-67d0bfe8925e" class=""><strong>Why Linked List?</strong></p><p id="b880909f-13b6-4e1a-a62e-2a25d214ab97" class="">Arrays can be used to store linear data of similar types, but arrays have the following limitations.</p><ol id="a9ee2f91-3bb4-4e2a-b1ec-3eb548b43416" class="numbered-list" start="1"><li><strong> </strong>The size of the arrays is fixed: So we must know the upper limit on the number of elements in advance. Also, generally, the allocated memory is equal to the upper limit irrespective of the usage.</li></ol><ol id="96f1c2e0-0419-4ec5-8443-598f554b37c3" class="numbered-list" start="2"><li>Inserting a new element in an array of elements is expensive because the room has to be created for the new elements and to create the room existing elements have to be shifted.</li></ol><h3 id="b05342d2-c197-4b32-8564-e6df27c0187c" class="">Question 17: Explain Algorithm Complexity in brief.</h3><h3 id="7b2c11e0-45f1-4dd7-b2b3-dc858c1a92ff" class="">Question 18: Explain enum and typedef with example.</h3><h3 id="b1058250-95de-46ef-b764-e417f6e00ff0" class="">Question 19: WAP to transpose a matrix.</h3><h3 id="faa7a9c0-f4df-4b20-a538-5cfb24500beb" class="">Question 20: Explain the memory hierarchy of computer system.</h3><p id="dec0bb2a-7059-48f3-a1f0-178dd5a92abc" class="">
+</p><p id="fa467d0f-3d74-4c3e-b30d-928d9b6bb29d" class="">
+</p></div></article></body></html>
