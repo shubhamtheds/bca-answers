@@ -1,0 +1,627 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>POM Exam Answers</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a5807f66-e098-41e6-a28b-8b30718b9703" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🎯</span></div><h1 class="page-title">POM Exam Answers</h1></header><div class="page-body"><h3 id="54797109-e13b-4e70-84da-34775abd849f" class=""><strong>Enlist and explain points of purpose of planning.</strong></h3><ol id="aa1e5484-cc5f-4771-a351-262d418dc5df" class="numbered-list" start="1"><li><strong>Improved employee performance</strong> – the employee who receives the necessary training is more able to perform in their job. The training will give the employee a greater understanding of their responsibilities within their role, and in turn, build their confidence.</li></ol><ol id="5d6472ed-c278-4ff2-acae-b8057cbc7373" class="numbered-list" start="2"><li><strong>Improved employee satisfaction and morale </strong>– the investment in training that a company makes shows employees that they are valued. The training creates a supportive workplace. Employees may gain access to the training they wouldn’t have otherwise known about or sought out themselves.</li></ol><ol id="ce73a98a-b4c4-4dbf-91cd-26441e55d559" class="numbered-list" start="3"><li><strong>Addressing weaknesses</strong> – Most employees will have some weaknesses in their workplace skills. A training program allows you to strengthen those skills that each employee needs to improve. A development program brings all employees to a higher level so they all have similar skills and knowledge.</li></ol><ol id="9960d940-20e5-452f-9073-2c8f09dfcf90" class="numbered-list" start="4"><li><strong>Consistency</strong> – A robust training and development program ensures that employees have consistent experience and background knowledge. The consistency is particularly relevant for the company’s basic policies and procedures.</li></ol><ol id="f8dfd34b-beb9-4cb0-bfe4-e99f175ed8d7" class="numbered-list" start="5"><li><strong>Increased innovation in new strategies and products</strong> – Ongoing training and upskilling of the workforce can encourage creativity. New ideas can be formed as a direct result of training and development.</li></ol><ol id="e92f6635-c8fd-4e5f-b087-1e516ffe7fa7" class="numbered-list" start="6"><li><strong>Reduced employee turnover</strong> – staff are more likely to feel valued if they are invested in and therefore, less likely to change employers. Training and development are seen as an additional company benefit. Recruitment costs, therefore, go down due to staff retention.</li></ol><h2 id="a0f8431f-4243-4917-9223-70de552d8c07" class=""><strong>Define organizing &amp; give the characteristics of formal group.</strong></h2><p id="9e562ded-8fd4-4a28-9489-195778eb02cb" class="">Organizing or organizing is the establishment of effective authority relationships among selected work, persons, and workplaces in order for the group to work together efficiently. Or the process of dividing work into sections and departments.</p><p id="d23f8e9e-496b-4fa4-8809-1afd94e0cf65" class=""><strong>Characteristics</strong></p><p id="d3d07551-221d-4877-8dfc-f47789420837" class="">The following are the important characteristics of organization:</p><ul id="b678f286-b74a-4932-b642-d4a8ccb8fbb8" class="bulleted-list"><li><strong>Specialization and division of work.</strong> The entire philosophy of the organization is centered on the concepts of specialization and division of work. The division of work is assigning responsibility for each organizational component to a specific individual or group thereof. It becomes specialization when the responsibility for a specific task lies with a designated expert in that field. The efforts of the operatives are coordinated to allow the process at hand to function correctly. Certain operatives occupy positions of management at various points in the process to ensure coordination.</li></ul><ul id="ca3ad79c-e4dc-4df7-85e6-4c74d2b7896f" class="bulleted-list"><li><strong>Orientation towards goals.</strong> Every organization has its own purposes and objectives. Organizing is the function employed to achieve the overall goals of the organization. Organization harmonizes the individual goals of the employees with overall objectives of the firm.</li></ul><ul id="83ba7696-72d8-4b88-a9f0-49c609cf34fb" class="bulleted-list"><li><strong>Composition of individuals and groups.</strong> Individuals form a group and the groups forms an organization. Thus, organization is the composition of individuals and groups. Individuals are grouped into departments and their work is coordinated and directed towards organizational goals.</li></ul><ul id="c494eac4-44e0-492a-b1b7-8a55e9af7abd" class="bulleted-list"><li><strong>Continuity.</strong> An organization is a group of people with a defined relationship in which they work together to achieve the goals of that organization. This relationship does not come to end after completing each task. The organization is a never-ending process.</li></ul><ul id="f5a6c3b2-5e5a-4fb3-9a8c-d632d66e9d91" class="bulleted-list"><li><strong>Flexibility.</strong> The organizing process should be flexible so that any change can be incorporated easily. It ensures the ability to adapt and adjust the activities in response to the change taking place in the external environment. The programs, policies, and strategies can be changed as and when required if the provision for flexibility is made in the organizing process.</li></ul><h3 id="b45fb50d-a719-4aa3-b9e0-6066553a9333" class=""><strong>Explain the following characteristics of leadership:</strong></h3><ol id="9da03f0c-bd5b-407e-8dae-beb6cfa50a97" class="numbered-list" start="1"><li><strong>Personal Leadership:</strong> Personal leadership is the ability to develop and utilize your positive leadership traits to guide the direction of your life instead of letting time and chance determine your course. Personal leadership can begin when you decide to be your own life coach and live by a personal mission statement that reflects your values and life goals.</li></ol><ol id="3cc574df-f548-428b-8433-d03563e10e37" class="numbered-list" start="2"><li><strong>Confidence:</strong> Confidence comes from the Middle French word of the same spelling, which means &quot;firmly trusting, bold.&quot; You can have confidence in yourself, another person, your country, even your rain boots — what you put your confidence in will not let you down. Confidence can also mean &quot;in secret,&quot; like when your neighbor tells you in confidence that he and his family are thinking of moving away — he doesn&#x27;t want others to know.</li></ol><h3 id="469c0069-5478-451d-b295-8e70c9eef058" class=""><strong>Differentiate between traditional organization &amp; contemporary organization.</strong></h3><figure id="9b1e0d5f-e31d-4da8-89dd-ca3e1c63eaea" class="image"><a href="POM%20Exam%20Answers%209b1e0d5fe31d4da889ddca3e1c63eaea/Untitled.png"><img style="width:1046px" src="POM%20Exam%20Answers%209b1e0d5fe31d4da889ddca3e1c63eaea/Untitled.png"/></a></figure><h3 id="950d9258-cd40-497b-98d9-1ae3d8a1e4e5" class=""><strong>What is the organization chart.</strong></h3><p id="d61e0c55-b552-4772-93e6-004af587c789" class="">An organizational chart is a diagram that visually conveys a company&#x27;s internal structure by detailing the roles, responsibilities, and relationships between individuals within an entity. Organizational charts either broadly depict an enterprise company-wide or drill down to a specific department or unit.</p><p id="a8330dac-31e9-4fc7-bd94-2cb843081116" class="">Organizational charts are alternatively referred to as <em>&quot;org charts&quot;</em> or <em>&quot;organization charts.&quot;</em></p><p id="9a37e445-cc04-4e28-adcb-a94c2312b22a" class="">Below is an example of a company organizational chart:</p><figure id="c09ad9f3-f874-416b-9cb1-b03b13df0252" class="image"><a href="POM%20Exam%20Answers%209b1e0d5fe31d4da889ddca3e1c63eaea/functional-org-chart.png"><img style="width:2400px" src="POM%20Exam%20Answers%209b1e0d5fe31d4da889ddca3e1c63eaea/functional-org-chart.png"/></a></figure><h3 id="bd90a239-14a9-4b93-95b9-e7db7f4cb929" class=""><strong>Define organization structure.</strong></h3><p id="dce9f050-9c08-415a-a447-5b95b6fe0f39" class="">An organizational structure is a system that outlines how certain activities are directed to achieve the goals of an organization. These activities can include rules, roles, and responsibilities.</p><p id="0d0d9661-5e90-457e-a9dd-10c351ef4d26" class="">The organizational structure also determines how information flows between levels within the company. For example, in a centralized structure, decisions flow from the top down, while in a decentralized structure, decision-making power is distributed among various levels of the organization.</p><p id="b16c1668-ef72-438a-a63a-84c0abca0679" class="">Having an organizational structure in place allows companies to remain efficient and focused.</p><h3 id="befeebe4-2484-45cc-ab0a-a84b1447463f" class=""><strong>Enlist the traits of leadership.</strong></h3><p id="4ee2ccf1-f4ec-47c4-8a8a-ff5ded18c575" class="">Some of the traits of leadership are:</p><ul id="e67517b5-5c0a-49dd-a157-071f558cd285" class="bulleted-list"><li><strong>Integrity:</strong> The importance of integrity should be obvious. Though it may not necessarily be a metric in employee evaluations, integrity is essential for the individual and the organization. It’s especially important for top-level executives who are charting the organization’s course and making countless other significant decisions.</li></ul><ul id="5f768107-4d4f-488d-9107-bdae6d2ccdd3" class="bulleted-list"><li><strong>Ability to delegate:</strong> Delegating is one of the core responsibilities of a leader, but it can be tricky to delegate effectively. The goal isn’t just to free yourself up — it’s also to enable your direct reports, facilitate teamwork, provide autonomy, lead to better decision-making, and help your direct reports grow</li></ul><ul id="5c809efc-b245-45c0-af78-62e17a436eba" class="bulleted-list"><li><strong>Communication: </strong>You need to be able to communicate in a variety of ways, from transmitting information to coaching your people. And you must be able to listen to and communicate with, a wide range of people across roles, social identities, and more.</li></ul><ul id="01b89b66-62b0-491e-a91f-118f3f6c19f0" class="bulleted-list"><li><strong>Self-awareness:</strong> While this is a more inwardly focused skill, self-awareness is paramount for leadership. The better you understand yourself, the more effective you can be.</li></ul><ul id="57b561a1-f55c-4c46-8b51-3cde1931c6df" class="bulleted-list"><li><strong>Gratitude:</strong> Being thankful can make you a better leader. Gratitude can lead to higher self-esteem, reduced depression and anxiety, and even better sleep.</li></ul><ul id="938aef5f-2c1e-42b8-a894-dbf317d234be" class="bulleted-list"><li><strong>Learning agility: </strong>Learning agility is the ability to know what to do when you don’t know what to do. If you’re a “quick study” or are able to excel in unfamiliar circumstances, you might already be learning agile.</li></ul><ul id="ebdb64b4-ccba-41cc-bb40-df9d74bf0597" class="bulleted-list"><li><strong>Influence: </strong>For some people, “influence” feels like a dirty word. But being able to convince people through logical, emotional, or cooperative appeals is a component of being an inspiring, effective leader. Influence is quite different from manipulation, and it needs to be done authentically and transparently.</li></ul><ul id="4425cc5f-16ac-434f-8239-3eb8a710bbf1" class="bulleted-list"><li><strong>Empathy: </strong>Empathy is correlated with job performance and is a critical part of emotional intelligence and leadership effectiveness.</li></ul><ul id="7065feec-03d8-433d-8cda-931d47642e6c" class="bulleted-list"><li><strong>Courage:</strong> It can be hard to speak up at work, whether you want to voice a new idea, provide feedback to a direct report, or flag a concern for someone above you. That’s part of the reason courage is a key skill for good leaders.</li></ul><ul id="d03b3e95-80ff-46e0-aa53-e65a4b492f59" class="bulleted-list"><li><strong>Respect:</strong> Treating people with respect on a daily basis is one of the most important things a leader can do. It will ease tensions and conflict, create trust, and improve effectiveness.</li></ul><h3 id="625139ce-d32c-4a5b-b6c5-bc351f8324b1" class=""><strong>What are the principles of managers.</strong></h3><p id="0b77d99a-c4e8-47a8-8cc6-270c4ec43456" class="">Henry Fayol, also known as the ‘father of modern management theory’ gave a new perception of the concept of management. He introduced a general theory that can be applied to all levels of management and every department. The Fayol theory is practised by the managers to organize and regulate the internal activities of an organization. He concentrated on accomplishing managerial efficiency.</p><p id="46daecda-5b2e-4f31-bfbb-e2a7c78b242a" class="">The fourteen principles of management created by Henri Fayol are explained below.</p><p id="820fd87a-8a30-49eb-a9d4-0f3f3299e15b" class=""><strong>1. Division of Work-</strong></p><p id="c5f339a9-fe5a-484f-a85f-0ad43f980002" class="">Henri believed that segregating work in the workforce amongst the worker will enhance the quality of the product. Similarly, he also concluded that the division of work improves the productivity, efficiency, accuracy and speed of the workers. This principle is appropriate for both the managerial as well as a technical work level.</p><p id="9e59f1f3-1f4f-405e-bea3-88af89f92d2b" class=""><strong>2. Authority and Responsibility-</strong></p><p id="a23bd59b-7cb6-4e09-8cb5-f364b5354539" class="">These are the two key aspects of management. Authority facilitates the management to work efficiently, and responsibility makes them responsible for the work done under their guidance or leadership.</p><p id="4a8ce126-7bea-4c3e-a21c-a9830684c907" class=""><strong>3. Discipline-</strong></p><p id="dca55ba4-fa00-4067-85e6-3f9ad04d84b8" class="">Without discipline, nothing can be accomplished. It is the core value for any project or any management. Good performance and sensible interrelation make the management job easy and comprehensive. Employees good behaviour also helps them smoothly build and progress in their professional careers.</p><p id="8d6dce55-4ed6-4346-8c4d-b1b5163bccdb" class=""><strong>4. Unity of Command-</strong></p><p id="d26202f7-37eb-4aee-916f-0c7f1b73dfd8" class="">This means an employee should have only one boss and follow his command. If an employee has to follow more than one boss, there begins a conflict of interest and can create confusion.</p><p id="a5ad3831-2922-40db-9ede-8f0c281930de" class=""><strong>5. Unity of Direction-</strong></p><p id="7288e2d6-ac2b-461f-90c6-e46f1e228d57" class="">Whoever is engaged in the same activity should have a unified goal. This means all the person working in a company should have one goal and motive which will make the work easier and achieve the set goal easily.</p><p id="688ae8dc-4484-4238-ad9a-afe68191a538" class=""><strong>6. Subordination of Individual Interest-</strong></p><p id="512d13b3-3f5f-44eb-8ddb-62cee6c01e6b" class="">This indicates a company should work unitedly towards the interest of a company rather than personal interest. Be subordinate to the purposes of an organization. This refers to the whole chain of command in a company.</p><p id="b692d402-eafc-459f-abc8-befeb37fe9a0" class=""><strong>7. Remuneration-</strong></p><p id="28c5fecd-9f40-46e6-9006-b0b9723644a0" class="">This plays an important role in motivating the workers of a company. Remuneration can be monetary or non-monetary. However, it should be according to an individual’s efforts they have made.</p><p id="848d0da9-391e-4788-9fde-1defd678676b" class=""><strong>8. Centralization:</strong></p><p id="d856f31c-8110-492f-bbe1-9d8a39badcbc" class="">In any company, the management or any authority responsible for the decision-making process should be neutral. However, this depends on the size of an organization. Henri Fayol stressed on the point that there should be a balance between the hierarchy and division of power.</p><p id="5b24e1e7-d81f-4c52-8a49-b5511f59d478" class=""><strong>9. Scalar Chain:</strong></p><p id="83bf358c-b4e9-4c5e-b712-704b90948546" class="">Fayol on this principle highlights that the hierarchy steps should be from the top to the lowest. This is necessary so that every employee knows their immediate senior also they should be able to contact any if needed.</p><p id="6826ab63-23ea-4367-a01f-18886d3c5181" class=""><strong>10. Order:</strong></p><p id="be40702e-163e-4f5d-b51d-4e0da3436784" class="">A company should maintain a well-defined work order to have a favorable work culture. The positive atmosphere in the workplace will boost more positive productivity.</p><p id="7d2ec297-0916-4d89-be9d-ee69c5d2459b" class=""><strong>11. Equity:</strong></p><p id="b2342e46-f847-4b48-8cfd-9b244d819dbe" class="">All employees should be treated equally and respectfully. It’s the responsibility of a manager that no employees face discrimination.</p><p id="96b7d044-d139-4221-a908-348dd509b785" class=""><strong>12. Stability:</strong></p><p id="c839bfb2-4035-46d3-b32b-90db1aa61632" class="">An employee delivers the best if they feel secure in their job. It is the duty of the management to offer job security to their employees.</p><p id="9d3f74c2-4653-4a0e-9744-d954f16fab8c" class=""><strong>13. Initiative:</strong></p><p id="5b28c2b7-194a-47f1-b5f3-4bd6d04ab1cf" class="">The management should support and encourage the employees to take initiative in an organization. It will help them to increase their interest and make them worth it.</p><p id="1d932a37-e873-4bf4-ba06-f02b09c35a21" class=""><strong>14. Esprit de Corps:</strong></p><p id="614690ac-4777-417b-8450-8d4c895bb12a" class="">It is the responsibility of the management to motivate their employees and be supportive of each other regularly. Developing trust and mutual understanding will lead to a positive outcome and work environment.</p><h3 id="8c918890-b327-49f6-8932-b667772a3168" class=""><strong>What is leadership.</strong></h3><p id="cadf4bb6-b46e-4182-ae5f-30f61d97b491" class="">Leadership is both a research area, and a practical skill encompassing the ability of an individual, group or organization to &quot;lead&quot;, influence or guide other individuals, teams, or entire organizations. Often viewed as a contested term, specialist literature debates various viewpoints, contrasting Eastern and Western approaches to leadership, and also (within the West) North American versus European approaches. U.S. academic environments define leadership as &quot;a process of social influence in which a person can enlist the aid and support of others in the accomplishment of a common task&quot;.</p><p id="db022603-2f7e-4ae5-906a-c71fb0792b03" class="">Others have challenged the more traditional managerial view of leadership which believes that it is something possessed or owned by one individual due to their role or authority, and instead advocate the complex nature of leadership which is found at all levels of the institution, both within formal roles. Studies of leadership have produced theories involving traits, situational interaction, function, behavior, power, vision and values, charisma, and intelligence, among others.</p><h3 id="3ef47827-a2a7-478f-b5aa-aff08f5a5897" class=""><strong>Draw the block diagram of communication process.</strong></h3><p id="894cba8c-62a6-4aff-99ca-85cd2ae00419" class="">The block diagram of a communication process will have five blocks, including the information source, transmitter, channel, receiver and destination blocks.</p><figure id="919334da-c390-40e1-864c-36df0dd37368" class="image"><a href="POM%20Exam%20Answers%209b1e0d5fe31d4da889ddca3e1c63eaea/1KqrYdi.png"><img style="width:432px" src="POM%20Exam%20Answers%209b1e0d5fe31d4da889ddca3e1c63eaea/1KqrYdi.png"/></a></figure><p id="77b752c6-bcf5-4faf-b905-d648035c4bb9" class="">1.<strong>Information source</strong> :-</p><ul id="910f626b-6ad6-4919-81a5-fe79eb63f188" class="bulleted-list"><li>The objective of any communication system is to convey information from one point to the other. The information comes from the information source, which originates it</li></ul><ul id="d7f3fad1-c4a0-42a2-aa13-6cf2827c2afc" class="bulleted-list"><li>Information is a very generic word signifying at the abstract level anything intended for communication, which may include some thoughts, news, feeling, visual scene, and so on.</li></ul><ul id="154d5968-7f19-4746-bfe1-a038979513cc" class="bulleted-list"><li>The information source converts this information into physical quantity.</li></ul><ul id="f7bcab86-fac8-4697-b2e5-6e50e1c8cf97" class="bulleted-list"><li>The physical manifestation of the information is termed as message signal</li></ul><p id="816cd6a8-b0dd-4e46-b44e-8f48f5332cac" class="">2.<strong>Transmitter</strong> :-</p><ul id="16faf0fc-8513-43db-9159-e6c995af7e18" class="bulleted-list"><li>The objective of the transmitter block is to collect the incoming message signal and modify it in a suitable fashion (if needed), such that, it can be transmitted via the chosen channel to the receiving point.</li></ul><ul id="26cbddda-8141-4356-acc6-40f40e48df27" class="bulleted-list"><li>Channel is a physical medium which connects the transmitter block with the receiver block.</li></ul><ul id="689b854b-0d93-483e-81c0-3d972142b9c7" class="bulleted-list"><li>The functionality of the transmitter block is mainly decided by the type or nature of the channel chosen for communication.</li></ul><p id="61c85913-f4ab-4d82-814f-fab47ad0fea1" class="">3.<strong>Channel</strong> :-</p><ul id="24b1a5f6-fbfc-4149-ba8b-e7840c37108f" class="bulleted-list"><li>Channel is the physical medium which connects the transmitter with that of the receiver.</li></ul><ul id="564e7f07-b6ab-4a2f-9b5d-9d22aab4a4a0" class="bulleted-list"><li>The physical medium includes copper wire, coaxial cable, fibre optic cable, wave guide and free space or atmosphere.</li></ul><ul id="3f613423-10fa-4271-857a-544b1f89bf07" class="bulleted-list"><li>The choice of a particular channel depends on the feasibility and also the purpose of the communication system.</li></ul><p id="7a8b64f4-5e41-481d-b746-827303e5eac9" class="">4.<strong>Receiver</strong>:-</p><ul id="71349626-807c-4739-8df7-ec74574ef444" class="bulleted-list"><li>The receiver block receives the incoming modified version of the message signal from the channel and processes it to recreate the original (non-electrical) form of the message signal.</li></ul><ul id="6386afbe-ea5e-4847-97cd-13d6af37c1e0" class="bulleted-list"><li>There are a great variety of receivers in communication systems, depending on the processing required to recreate the original message signal and also final presentation of the message to the destination.</li></ul><p id="6db41a73-7f56-4759-be86-bea277632d99" class="">5.<strong>Destination</strong>:-</p><ul id="59022ac3-4dbc-497d-bdc8-f530a254c641" class="bulleted-list"><li>The destination is the final block in the communication system which receives the message signal and processes it to comprehend the information present in it.</li></ul><ul id="174d8fee-50df-40e2-b2a6-492abe2aecdd" class="bulleted-list"><li>Usually, humans will be the destination block.</li></ul></div></article></body></html>
