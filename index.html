@@ -1,0 +1,629 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>English Exam Answers</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9f9e5f6f-39ba-4538-8f68-a1b3296e8b72" class="page sans"><header><h1 class="page-title">English Exam Answers</h1></header><div class="page-body"><h3 id="59e1fe4b-0d6e-4a87-8529-353f02df85f8" class="">Question 1: Write short note on chronemics.</h3><p id="c3b426c2-e53c-4b5f-819a-eb71d9e57543" class="">Chronemics is the study of how time is used in communication. Time can be used as a communication tool in many ways, from punctuality to expectations around waiting and response time, to general principles around time management.
+Chronemics has become an area of study primarily for anthropologists, who look at cultural norms around the use of time, and the way cultures can vary and converge around different norms. More recently, chronemics appears to be branching out into other disciplines, such as the more business-oriented study of organizational behavior.</p><h3 id="4db13e7b-00e1-43b0-86ba-ab8845c535c2" class="">Question 2: What is you-attitude in letter writing.</h3><p id="8f2bea90-f41c-4523-a1ac-6b902d9294b2" class="">“You-attitude,” a phrase used by Kitty O. Locker in Business and Administrative Communication, refers to a style of writing that puts readers’ needs first. Specifically, you-attitude “emphasiz[es] what the reader wants to know, respecting the reader’s intelligence, and protecting the reader’s ego.” It details five strategies for achieving you-attitude in your writing:</p><ol id="0ee0e88a-cfa3-406a-881d-336ea654f22d" class="numbered-list" start="1"><li>Talk about the reader, not about yourself.</li></ol><ol id="00ba55a1-0429-4140-a85a-3ebd8c3b4283" class="numbered-list" start="2"><li>Refer to the reader’s request or order specifically.</li></ol><ol id="ee545d8e-a636-458a-9e65-f0503aa9573f" class="numbered-list" start="3"><li>Don’t talk about feelings, except to congratulate or offer sympathy. In most professional settings and situations, your feelings are irrelevant.</li></ol><ol id="d9b59d72-0eec-4766-91a0-28dbd77ed11b" class="numbered-list" start="4"><li>Use you more often than I in positive situations. Doing so accentuates the good news associated with the reader.</li></ol><ol id="417264f9-fc35-49f6-ab1c-b34373dc572e" class="numbered-list" start="5"><li>Avoid the word you in delivering bad news, as it can be interpreted as accusatory and over-accentuate the negative.</li></ol><h3 id="2da2233a-0656-4915-935f-f6c62094a593" class="">Question 3: What is jargon?</h3><p id="579a8912-5597-49b8-a1da-628fea5bdc72" class="">Jargon is the specialized terminology associated with a particular field or area of activity. Jargon is normally employed in a particular communicative context and may not be well understood outside that context. The context is usually a particular occupation (that is, a certain trade, profession, vernacular or academic field), but any ingroup can have jargon. The main trait that distinguishes jargon from the rest of a language is special vocabulary—including some words specific to it and often different senses or meanings of words, that outgroups would tend to take in another sense—therefore misunderstanding that communication attempt. Jargon is sometimes understood as a form of technical slang and then distinguished from the official terminology used in a particular field of activity.</p><h3 id="dc4e8a59-2c5a-49b0-b166-fcfd88a493a2" class="">Question 4: Explain decoding process.</h3><p id="71b226d7-547a-48b6-832a-ecccbff12e08" class="">Decoding is the process of translating print into speech by rapidly matching a letter or combination of letters (graphemes) to their sounds (phonemes) and recognizing the patterns that make syllables and words. There is an area in the brain that deals with language processing and does this process automatically.</p><h3 id="44c1b9ae-e8c3-4d2f-8733-a443d2ac56bb" class="">Question 5: Find the one word substitution:</h3><ol id="869fac7e-ee2d-44fb-bcf4-d1f99ed3ba85" class="numbered-list" start="1"><li>Communication by touch → Haptic</li></ol><ol id="2f964531-bd83-4489-8bf9-66eb6506af58" class="numbered-list" start="2"><li>Specialized or technical language → Jargon</li></ol><h3 id="1f8bd7eb-49b8-433c-b82e-026a1b6552f8" class="">Question 6: What is paralanguage?</h3><p id="30d3978e-c80e-4558-b64f-41b3ee0723a1" class="">Paralanguage, also known as vocalics, is a component of meta-communication that may modify meaning, give nuanced meaning, or convey emotion, by using techniques such as prosody, pitch, volume, intonation, etc. It is sometimes defined as relating to nonphonemic properties only.</p><h3 id="a51f7655-08f9-417a-977e-a9a8ba69d0c9" class="">Question 7: Explain the use of preposition.</h3><p id="63fe2053-9112-4604-9482-c7e019be6196" class="">A preposition is a word or group of words used before a noun, pronoun, or noun phrase to show direction, time, place, location, spatial relationships, or to introduce an object. Some examples of prepositions are words like &quot;in,&quot; &quot;at,&quot; &quot;on,&quot; &quot;of,&quot; and &quot;to.&quot;</p><p id="b55c5a59-6410-41ee-be6b-056ff2db3905" class="">Prepositions in English are highly idiomatic. Although there are some rules for usage, much preposition usage is dictated by fixed expressions. In these cases, it is best to memorize the phrase instead of the individual preposition.</p><h3 id="320816d3-4a63-47c8-96eb-cf98d30de18a" class="">Question 8: Correct the errors of the following sentence.</h3><ol id="61f6a82f-388b-4f3f-9c7d-ddc475e38b6f" class="numbered-list" start="1"><li>If I was the teacher I would not give homework.<p id="9ad020a5-e874-4995-b73d-1054d30b26ff" class="">If I was the teacher I would&#x27;ve not given any homework.</p></li></ol><ol id="0dbd8fc9-a284-4e2c-9a10-dca1d2299c9a" class="numbered-list" start="2"><li>The cake is smelling sweet<p id="28294666-023c-403e-8962-49b059d88b6b" class="">The cake smells sweet.</p></li></ol><h3 id="fa6b4945-3c0f-4573-a867-f487d5d81edd" class="">Question 9: Explain the various parts of a letter in a chronological order.</h3><p id="4e0ebbc6-9134-463a-bd89-bf8f44309538" class="">The seven parts of a business letter include the heading, date, address of recipient, salutation, body, complimentary close, and signature.</p><p id="bf433ec4-c9f5-4558-9aba-096174db1d11" class=""><strong>Heading</strong></p><p id="a4a55c2f-6a70-4f82-a9cc-66f65ce22c71" class="">Most professional business correspondence is printed on a letterhead template. A letterhead contains the company name, address, and contact information. An individual may also create a letterhead that contains his name and personal contact information.</p><p id="47e9f5f3-4d63-4134-af95-0d4b93d745f5" class=""><strong>Date</strong></p><p id="909e10e8-3526-433e-b402-008cde19d1e1" class="">Simply put, the date is the day the letter is sent. The most commonly used data format is June 21, 2011.</p><p id="ac58da25-47e7-41c4-80d9-3826f7b00822" class=""><strong>Address</strong></p><p id="0877536c-f01c-44b7-8dbb-bdbf66e0bebb" class="">This is the address of the recipient. If applicable, the first line in the address block should include the recipient&#x27;s name and title, and the second line should state the recipient&#x27;s company or business. The third and fourth lines are designated for the actual address.</p><p id="ec019254-5443-4f38-94b5-93dfb69a524b" class=""><strong>Salutation</strong></p><p id="ddc0e6a2-0fb3-4522-a586-b50981404749" class="">Different circumstances determine which salutation or greeting is most appropriate. Use &quot;Dear&quot; when the recipient&#x27;s name or title is known. Examples include &quot;Dear Mr. Doe&quot; or &quot;Dear Sales Director.&quot; When the name or title is unknown, use &quot;To Whom It May Concern.&quot;</p><p id="f45c07b3-3122-47b5-8eee-bb84897d5410" class=""><strong>Body</strong></p><p id="cfae2fc2-3824-4fb0-9242-84854886beb7" class="">The body is the longest part of a letter and is usually divided into three subcategories: introduction, main content, and summary. The introductory paragraph states the purpose of the letter. The main content conveys all necessary detailed information and has no set length requirements. The last paragraph summarizes the information provided, restates the letter intent, and offers either instructions or an inquiry regarding follow-up correspondence.</p><p id="9b0b62c2-cedf-4134-ab6a-1f336c462d22" class=""><strong>Complimentary Close</strong></p><p id="75f53bd9-af3b-4149-a352-0fa75c3cdfbf" class="">The complimentary close is a word or short phrase that means &quot;goodbye.&quot; &quot;Sincerely&quot; is the most common closing remark. Others include &quot;cordially,&quot; &quot;best wishes,&quot; and &quot;best regards.&quot;</p><p id="cdc2e293-0dfd-4e58-8e2e-4a2eff9559d1" class=""><strong>Signature</strong></p><p id="263da00c-1bb5-46eb-912f-b6617657c20c" class="">In letters that are sent via email, the signature is simply the sender&#x27;s name and title typed immediately below the complimentary close.</p><h3 id="707c73e5-bd68-4529-adb8-bc7f6c45b493" class="">Question 10: Explain the format/structure of Modified Block letter.</h3><p id="3de31e16-abe1-4566-94b0-96ae5bea29a1" class="">Modified block differs from block style in that the date, sign off, and signature lines begin at the center point of the page line. The beginning of each paragraph is indented five spaces, along with the subject line, if used. Depending on the length of the letter, paragraphs may be separated by a single or double line space.</p><p id="8d4e9d75-961b-4670-b85a-2421c05ae1f9" class="">In a modified block business letter, the heading, complimentary close, the signature, and identification are aligned to the right. Address, salutation, the body, and enclosures are aligned to the left. First sentences of paragraphs are indented.</p><p id="16546492-e9ef-4ac6-a5e9-07adc45f7173" class="">Here is an example: (Please change all the personal info of the letter)</p><figure id="2b4884f1-2a45-4fc8-b207-5201be90ad34" class="image"><a href="English%20Exam%20Answers%202b4884f12a454fc8b2075201be90ad34/uk_sample_semi-formal-letter.jpg"><img style="width:1700px" src="English%20Exam%20Answers%202b4884f12a454fc8b2075201be90ad34/uk_sample_semi-formal-letter.jpg"/></a></figure><p id="29ee1ce6-7403-4830-95ae-016e63fe4de3" class="">
+</p></div></article></body></html>
