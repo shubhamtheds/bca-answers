@@ -1,18 +1,643 @@
-<!DOCTYPE html>
-<html lang="en">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>BCA DBMS Semester II</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
-    <title>Document</title>
-</head>
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
 
-<body>
-    <h1>BCA Answers</h1>
-    <script src="./script.js"></script>
-</body>
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
 
-</html>
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="59db53bc-18c0-4ea5-9d90-33e224fa20f9" class="page serif"><header><h1 class="page-title">BCA DBMS Semester II</h1></header><div class="page-body"><h1 id="5094a411-73ce-4363-a895-e569d67ffd6d" class="">Question 1: What are the advantages of DBMS?</h1><p id="44378083-6c59-47d2-99de-75d2b1898d84" class="">Some advantages of DBMS are:</p><h3 id="453fb165-f202-4300-a9d4-d0c6c48064ab" class=""><strong>Sharing of Data</strong></h3><p id="a080de3c-1d79-4eb2-8818-ed4e6809147d" class="">In a database, the users of the database can share the data among themselves. There are various levels of authorisation to access the data, and consequently the data can only be shared based on the correct authorisation protocols being followed.</p><p id="069e7d9d-13f0-41d4-93bc-970896f56ff1" class="">Many remote users can also access the database simultaneously and share the data between themselves.</p><h3 id="408b49f3-a08e-4cab-b1db-742df2738ae0" class=""><strong>Data Integrity</strong></h3><p id="35cba62e-a718-41c2-977d-80097ff9769b" class="">Data integrity means that the data is accurate and consistent in the database. Data Integrity is very important as there are multiple databases in a DBMS. All of these databases contain data that is visible to multiple users. So it is necessary to ensure that the data is correct and consistent in all the databases and for all the users.</p><h3 id="d8d8955e-98f4-43a5-a628-d1f143a4ee46" class=""><strong>Data Security</strong></h3><p id="d9f2f16e-1a13-4ed5-b6ac-8c5e98bccf65" class="">Data Security is vital concept in a database. Only authorised users should be allowed to access the database and their identity should be authenticated using a username and password. Unauthorised users should not be allowed to access the database under any circumstances as it violates the integrity constraints.</p><h3 id="2b7e3de1-8a95-48f2-aad2-157ebf87db72" class=""><strong>Privacy</strong></h3><p id="3eb6939e-c0cc-438d-938b-158469201968" class="">The privacy rule in a database means only the authorized users can access a database according to its privacy constraints. There are levels of database access and a user can only view the data he is allowed to. For example - In social networking sites, access constraints are different for different accounts a user may want to access.</p><h3 id="96809a96-0369-4462-8f73-18fb4bfcbe94" class=""><strong>Backup and Recovery</strong></h3><p id="ea07bb53-0838-4746-95b4-35b35bdacbfc" class="">Database Management System automatically takes care of backup and recovery. The users don&#x27;t need to backup data periodically because this is taken care of by the DBMS. Moreover, it also restores the database after a crash or system failure to its previous condition.</p><h3 id="bcdb6310-102e-459d-9e90-16ca4b076ce6" class=""><strong>Data Consistency</strong></h3><p id="cda3400f-7014-4611-ab01-2f7a7917b199" class="">Data consistency is ensured in a database because there is no data redundancy. All data appears consistently across the database and the data is same for all the users viewing the database. Moreover, any changes made to the database are immediately reflected to all the users and there is no data inconsistency.</p><h1 id="25e5bab6-9ff6-49c5-974e-d75fbc75cf79" class="">Question 2: What is the difference between primary key and foreign key?</h1><figure id="01ff36c5-73ce-4f71-93fa-d55f6ad41b0c" class="image"><a href="BCA%20DBMS%20Semester%20II%2001ff36c573ce4f7193fad55f6ad41b0c/5caf40be295f735fad16ed63cb7eb4e4.jpg"><img style="width:546px" src="BCA%20DBMS%20Semester%20II%2001ff36c573ce4f7193fad55f6ad41b0c/5caf40be295f735fad16ed63cb7eb4e4.jpg"/></a></figure><h1 id="6cf41dbd-c1af-4272-9c2f-5a2d60066251" class="">Question 3: Explain the terms database and DBMS. Also, mention the different types of DBMS.</h1><p id="b7d528ba-4577-4dc4-93d7-6b2418a16501" class="">A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a <a href="https://www.oracle.com/in/database/what-is-database/#WhatIsDBMS">database management system (DBMS)</a>. Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.</p><p id="f9f9bb18-342f-45f9-8e88-63f4af790821" class="">Data within the most common types of databases in operation today is typically modeled in rows and columns in a series of tables to make processing and data querying efficient. The data can then be easily accessed, managed, modified, updated, controlled, and organized. Most databases use structured query language (SQL) for writing and querying data.</p><p id="ae2104d2-cdbe-4464-b8c8-ce881dfeb92f" class="">A database management system (DBMS) is a software system that uses a standard method to store and organize data. The data can be added, updated, deleted, or traversed using various standard algorithms and queries.</p><h3 id="c5d57809-e8f8-47dc-9c1d-8af4876695ba" class="">Types of Database Management Systems</h3><p id="7de2ee53-8ab7-4bcd-aa89-1f05cfafbb8a" class="">There are several types of database management systems. Here is a list of seven common database management systems:</p><ol type="1" id="14783afa-f9ee-40fe-8b17-8889153acc60" class="numbered-list" start="1"><li>Hierarchical databases</li></ol><ol type="1" id="0097416d-2454-439a-8301-1e36072f32c8" class="numbered-list" start="2"><li>Network databases</li></ol><ol type="1" id="d2ad9854-6ce9-4b04-8446-635803bb6605" class="numbered-list" start="3"><li>Relational databases</li></ol><ol type="1" id="15f2b962-d377-4841-909c-efdf3ba1e77a" class="numbered-list" start="4"><li>Object-oriented databases</li></ol><ol type="1" id="313c15f6-5c5e-4ee7-948d-ff8215ea7582" class="numbered-list" start="5"><li>Graph databases</li></ol><ol type="1" id="d4c81d3e-edd1-4a5b-ab49-23d830a1a70b" class="numbered-list" start="6"><li>ER model databases</li></ol><ol type="1" id="b4b89d86-4ad2-4769-8a62-1b008eeef741" class="numbered-list" start="7"><li>Document databases</li></ol><ol type="1" id="9f261549-ae54-4156-b36e-af412bf31d20" class="numbered-list" start="8"><li>NoSQL databases</li></ol><h1 id="12397c93-fd9a-4714-845c-ebc1ed05241c" class="">Question 4: What is data isolation?</h1><p id="aa6188fb-b7fc-48b2-b803-4b6c9ad33e27" class=""><em>Data isolation</em>  is a property that determines when and how changes made by one operation become visible to other concurrent users and systems. This issue occurs in a concurrency situation. This is a problem because:</p><ul id="92cf97a0-2ffc-4b90-b5b4-630666a299f5" class="bulleted-list"><li>It is difficult for new applications to retrieve the appropriate data, which might be stored in various files.</li></ul><h1 id="a49f881f-0e6a-4d4a-aca2-990d7be5eee0" class="">Question 5: What is data redundancy?</h1><p id="ba0d6fc5-b573-46fc-9fe5-79a7c9be0cee" class="">Often, within an organization, files and applications are created by different programmers from various departments over long periods of time. This can lead to <em>data redundancy, </em>a situation that occurs in a database when a field needs to be updated in more than one table. This practice can lead to several problems such as:</p><ul id="fee40df5-4ccc-4ec1-bc64-dacca133ebbd" class="bulleted-list"><li>Inconsistency in data format</li></ul><ul id="2d7ebdb6-c28c-48b7-9797-d4f99ccd1e99" class="bulleted-list"><li>The same information being kept in several different places (files)</li></ul><ul id="5aa1643a-58e2-49b0-a1d0-b127dd5cc4f0" class="bulleted-list"><li><em>Data inconsistency</em>, a situation where various copies of the same data are conflicting, wastes storage space and duplicates effort</li></ul><h1 id="50125bec-bba1-44b6-9344-de5d91b5df76" class="">Question 6: Whare are the differences between DBMS and RDBMS?</h1><figure id="be7fe2cf-2eef-4e13-83eb-a8ff95dca457" class="image"><a href="BCA%20DBMS%20Semester%20II%2001ff36c573ce4f7193fad55f6ad41b0c/Difference_between_DBMS_and_RDBMS.png"><img style="width:601px" src="BCA%20DBMS%20Semester%20II%2001ff36c573ce4f7193fad55f6ad41b0c/Difference_between_DBMS_and_RDBMS.png"/></a></figure><h1 id="4a2c9b4e-d0f6-4b7d-9879-539afe592fcc" class="">Question 7: What is a Database?</h1><p id="83b21233-8473-43bc-b84f-b6eadbf412b2" class="">A database is an organized collection of data, so that it can be easily accessed and managed.</p><p id="2d82920f-3981-4c37-94c9-248705b1266f" class="">We can organize data into tables, rows, columns, and index it to make it easier to find relevant information.</p><p id="9525518d-956a-4228-b920-5f072dce9860" class=""><strong>Database handlers</strong> create a database in such a way that only one set of software program provides access of data to all the users.</p><p id="ee8a5ef2-602f-492c-a59e-baf3def0f9f5" class="">The <strong>main purpose</strong> of the database is to operate a large amount of information by storing, retrieving, and managing data.</p><p id="b040d778-0608-43a5-addd-2c9f693cca83" class="">There are many <strong>dynamic websites</strong> on the World Wide Web nowadays which are handled through databases. For example, a model that checks the availability of rooms in a hotel. It is an example of a dynamic website that uses a database.</p><p id="cb96c5cd-9dfd-4ca6-84f1-ce3abcc5082d" class="">There are many <strong>databases available</strong> like MySQL, Sybase, Oracle, MongoDB, Informix, PostgreSQL, SQL Server, etc.</p><h1 id="10f76c21-7c94-423f-ae23-d68f6380efb7" class="">Question 8: What is the role of DBMS in banking?</h1><p id="558bd4dc-0595-4198-8413-70ff8edcf443" class="">A DBMS plays a crucial role in both the creation and management of data. Without a database management system, running and managing data effectively is not possible. Serving as the intermediary between the user and the database, a DBMS provides users access to files stored in a database. It provides the end user with a single, integrated view of the data, and translates all applications it receives into complex operations that fulfil those requests. However, much of the internal complexity of the database is hidden from the users and application programs.</p><p id="1124b77a-fbb3-4ef3-bf50-b84a92944b2c" class="">Database management systems are specifically designed for the storage and retrieval of (large amounts of) data. Banks handle large amounts of data. A DBMS enables them to store that data, operate on it, and retrieve it when needed, fast enough for their and their customer’s needs.</p><p id="000ef953-9c5d-4eb7-8d1a-2508698a104b" class="">That’s not the full story. Most banks use a DBMS type called “relational” (RDBMS for short), for good reasons. These reasons are abbreviated ACID, for the four properties that every RDBMS places above all else:</p><ul id="94c0d774-88ed-46d3-9604-f1a5ec0485cc" class="bulleted-list"><li>Atomicity: When multiple changes are declared part of a single transaction, then all of them will fail or all will succeed; never a part. So if I transfer money to you and the computer fails after debiting my account but before crediting yours, then the RDBMS will ensure that, once the server is restarted, either the rest of the transaction completes or (usually) the part that was already done is undone. In other words, it can never happen that money “disappears” because my account is debited but yours is not credited.</li></ul><ul id="9401d611-3c14-4f39-a6c4-8f2bc7721be2" class="bulleted-list"><li>Consistency: Certain business rules can be declared within the database and then the RDBMS ensures that these will never be violated. Things such as not being able to enter a transfer order from an account number that does not exist, or not being able to enter a transfer order with a negative amount.</li></ul><ul id="394025a5-d013-425e-9dff-2f14e48f1336" class="bulleted-list"><li>Isolation: For each user, it appears as if they are the sole user of the database; in other words you will never “see” unfinished work from other users. When one clerk processes a transfer of $100,000 from your checking account to your savings account and another clerk looks at your value, he can either see the reality as it was before the transfer started (lot of money in the checking account, no money in the savings account), or after (empty checking account, saving account at $100,000); but never the “halfway completed” version where the money is in transfer and you appear to have suddenly lost your credit rating. (The clerk handling the transfer might see that intermediate state because that’s part of HIS transaction).</li></ul><ul id="7a67d19d-4bb4-4e81-9a60-e1a6ad292242" class="bulleted-list"><li>Durability: Whatever happens to the computer, once a transaction is reported as complete the RDBMS ensures that the changes are permanent. So if someone transfers money from another bank to your account and your bank has a power outage just when this happens, then either it happens before the other bank gets acknowledgement (and they’ll know to wait a while and then retry); or the other bank gets confirmation and the RDBMS guarantees that the credit to your account is not lost. Without the “D” of ACID, there are some scenarios where the power can get lost when the change is in memory but not yet written to hard disk or other permanent storage, and you would lose your money.</li></ul><p id="f003dd78-599b-4616-acca-34e20257b3fd" class="">So as you see, each of the ACID properties helps the banks do their business, which makes relational databases a natural choice for the administration of their customer and account data. (They probably use other databases systems as well, for other purposes).</p><h1 id="3ae4d378-516f-4d96-ac66-d567e5b8c2c3" class="">Question 9: What is sub query?</h1><p id="47c344fe-fa3b-4812-8c8a-79964442b997" class="">A subquery is a query that is nested inside a SELECT, INSERT, UPDATE, or DELETE statement, or inside another subquery.</p><p id="cb6e11be-b11f-4d0b-8212-526fac618d01" class="">A subquery can be used anywhere an expression is allowed. In this example a subquery is used as a column expression named MaxUnitPrice in a SELECT statement.</p><pre id="06136cd7-0c3c-44f4-852f-a2555ec8d44a" class="code"><code>USE AdventureWorks2016;
+GO
+SELECT Ord.SalesOrderID, Ord.OrderDate,
+    (SELECT MAX(OrdDet.UnitPrice)
+     FROM Sales.SalesOrderDetail AS OrdDet
+     WHERE Ord.SalesOrderID = OrdDet.SalesOrderID) AS MaxUnitPrice
+FROM Sales.SalesOrderHeader AS Ord;
+GO</code></pre><h1 id="e6e113e1-923f-4cf2-a5cb-de77413a61d1" class="">Question 10: Mention the different languages present in DBMS.</h1><ul id="bf67c030-34ad-4ab0-adde-4dabf85c5c63" class="bulleted-list"><li>A DBMS has appropriate languages and interfaces to express database queries and updates.</li></ul><ul id="0f1aab51-d102-43cc-aec0-dafca2d6bcfe" class="bulleted-list"><li>Database languages can be used to read, store and update the data in the database.</li></ul><figure id="52a1e2af-22ae-4341-8b3b-10aa1f00876f" class="image"><a href="BCA%20DBMS%20Semester%20II%2001ff36c573ce4f7193fad55f6ad41b0c/dbms-language.png"><img style="width:501px" src="BCA%20DBMS%20Semester%20II%2001ff36c573ce4f7193fad55f6ad41b0c/dbms-language.png"/></a></figure><h3 id="affabf53-7dd3-4bcd-a9f0-d4e86f350ae9" class="">Data Definition Language</h3><ul id="6723248e-1cde-470a-9636-e7a03456ae65" class="bulleted-list"><li><strong>DDL</strong> stands for <strong>D</strong>ata <strong>D</strong>efinition <strong>L</strong>anguage. It is used to define database structure or pattern.</li></ul><ul id="78540495-2fff-4168-8cc9-9f611c603a51" class="bulleted-list"><li>It is used to create schema, tables, indexes, constraints, etc. in the database.</li></ul><ul id="9aa1611e-7464-48d7-85bf-b589103546a6" class="bulleted-list"><li>Using the DDL statements, you can create the skeleton of the database.</li></ul><ul id="05bcc24e-9798-491e-a2a5-72b514f2cebb" class="bulleted-list"><li>Data definition language is used to store the information of metadata like the number of tables and schemas, their names, indexes, columns in each table, constraints, etc.</li></ul><p id="c1abaf19-f7d5-4024-8a4c-dfe37d297941" class="">Here are some tasks that come under DDL:</p><ul id="23b1d6a5-1cb1-4ac8-b260-d7b0eed4c316" class="bulleted-list"><li><strong>Create:</strong> It is used to create objects in the database.</li></ul><ul id="c665cdad-4101-43d7-adda-9871765df9b3" class="bulleted-list"><li><strong>Alter:</strong> It is used to alter the structure of the database.</li></ul><ul id="6b218965-183d-412b-a234-be3d01de7ab9" class="bulleted-list"><li><strong>Drop:</strong> It is used to delete objects from the database.</li></ul><ul id="e51afe8e-fa60-424b-aa2f-c6469f90b5fa" class="bulleted-list"><li><strong>Truncate:</strong> It is used to remove all records from a table.</li></ul><ul id="853d19de-a5a2-45a9-9427-3a3b64669029" class="bulleted-list"><li><strong>Rename:</strong> It is used to rename an object.</li></ul><ul id="567bbf99-9333-46d2-a50c-d8b994c01c3c" class="bulleted-list"><li><strong>Comment:</strong> It is used to comment on the data dictionary.</li></ul><p id="10376dfe-9fa7-43d0-80e7-25c426c92418" class="">These commands are used to update the database schema that&#x27;s why they come under Data definition language.</p><h3 id="f14100f5-3f3b-48fa-a78d-8a0c5f0fba34" class="">2. Data Manipulation Language</h3><p id="0ddacb8d-e4c4-4502-a96e-e243e1b0b592" class=""><strong>DML</strong> stands for <strong>D</strong>ata <strong>M</strong>anipulation <strong>L</strong>anguage. It is used for accessing and manipulating data in a database. It handles user requests.</p><p id="3b1e19ce-4375-4567-ac45-50aaf13a8a05" class="">Here are some tasks that come under DML:</p><p id="f25d3695-b37d-4bdd-a1c0-4a525c86eda0" class="">8.2M</p><p id="6b174dfe-0a2e-4e87-848e-052956ef8c7c" class="">132</p><p id="93e2ba1e-eeff-4409-9689-f0b517a78ee6" class="">Hello Java Program for Beginners</p><ul id="c01d8038-19d9-42ad-8e75-5ce8227abcea" class="bulleted-list"><li><strong>Select:</strong> It is used to retrieve data from a database.</li></ul><ul id="a163c28f-e94d-4088-a469-e2870cba39a1" class="bulleted-list"><li><strong>Insert:</strong> It is used to insert data into a table.</li></ul><ul id="8f6ec3a0-f69b-4ea1-8c1e-080612d0eda0" class="bulleted-list"><li><strong>Update:</strong> It is used to update existing data within a table.</li></ul><ul id="f023aec7-3109-4269-8e40-7b142ac0f83b" class="bulleted-list"><li><strong>Delete:</strong> It is used to delete all records from a table.</li></ul><ul id="6a319995-0238-4109-880e-1adeac18b6d9" class="bulleted-list"><li><strong>Merge:</strong> It performs UPSERT operation, i.e., insert or update operations.</li></ul><ul id="dd03d5aa-f7a0-4eab-b719-35464393d273" class="bulleted-list"><li><strong>Call:</strong> It is used to call a structured query language or a Java subprogram.</li></ul><ul id="634957b7-faf6-4bcd-accb-aa813f141180" class="bulleted-list"><li><strong>Explain Plan:</strong> It has the parameter of explaining data.</li></ul><ul id="0def250b-221a-41b1-939f-850bfa3f830b" class="bulleted-list"><li><strong>Lock Table:</strong> It controls concurrency.</li></ul><h3 id="574596d9-dceb-4d10-9ce9-4fea168f9ea4" class="">3. Data Control Language</h3><ul id="d2fc8635-9259-4643-91c5-cb531ab21043" class="bulleted-list"><li><strong>DCL</strong> stands for <strong>D</strong>ata <strong>C</strong>ontrol <strong>L</strong>anguage. It is used to retrieve the stored or saved data.</li></ul><ul id="de76176a-c686-484d-8b94-ad3832e7cc38" class="bulleted-list"><li>The DCL execution is transactional. It also has rollback parameters.</li></ul><p id="2df0010e-e480-4d93-b856-02cf4fa65730" class="">(But in Oracle database, the execution of data control language does not have the feature of rolling back.)</p><p id="8c56a1fd-864c-4ab0-915c-ddcfd3f0711a" class="">Here are some tasks that come under DCL:</p><ul id="9f9a3edf-e1e7-40a3-9511-71bcb58b5e3e" class="bulleted-list"><li><strong>Grant:</strong> It is used to give user access privileges to a database.</li></ul><ul id="8ae1a19a-cbe9-48ff-aa67-73f3b8797e99" class="bulleted-list"><li><strong>Revoke:</strong> It is used to take back permissions from the user.</li></ul><p id="1df59987-8ac9-4405-b384-b4929b1b4403" class="">There are the following operations which have the authorization of Revoke:</p><p id="2dea2440-eb15-4183-8a4c-0f16e54f4704" class="">CONNECT, INSERT, USAGE, EXECUTE, DELETE, UPDATE and SELECT.</p><h3 id="a8c73a47-7c0c-42c8-9f6b-01d2550dc032" class="">4. Transaction Control Language</h3><p id="34b41793-05f9-4c50-b987-b64927519c37" class="">TCL is used to run the changes made by the DML statement. TCL can be grouped into a logical transaction.</p><p id="d2b3d83d-d3c0-4f4a-a803-3e2445e383ad" class="">Here are some tasks that come under TCL:</p><ul id="ea9f323b-fe4c-44a8-9bc7-c004c960f98b" class="bulleted-list"><li><strong>Commit:</strong> It is used to save the transaction on the database.</li></ul><ul id="c4b708a9-9e8f-4aa7-9b23-113e063e3828" class="bulleted-list"><li><strong>Rollback:</strong> It is used to restore the database to original since the last Commit.</li></ul></div></article></body></html>
