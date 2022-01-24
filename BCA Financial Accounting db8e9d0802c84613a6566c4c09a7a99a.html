@@ -1,0 +1,657 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>BCA Financial Accounting</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7230e3d4-d4a2-4cd8-a396-da66313d30e4" class="page serif"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 22.28%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🐱</span></div><h1 class="page-title">BCA Financial Accounting</h1></header><div class="page-body"><blockquote id="c3e5ae72-2120-40c3-987a-260ccf4aada4" class=""><em>The way I see it, if you want the rainbow, you gotta put up with the fire.</em></blockquote><figure id="db8e9d08-02c8-4613-a656-6c4c09a7a99a" class="image"><a href="BCA%20Financial%20Accounting%20db8e9d0802c84613a6566c4c09a7a99a/Untitled.png"><img style="width:578px" src="BCA%20Financial%20Accounting%20db8e9d0802c84613a6566c4c09a7a99a/Untitled.png"/></a></figure><h3 id="434660f6-9aa1-41db-af18-bd7c2880d55e" class="">Q1: Define financial accounting?</h3><p id="08a6bfaf-6f7e-4d67-9a74-3a67037c63a3" class="">Financial accounting is a specific branch of accounting involving a process of recording, summarizing, and reporting the myriad of transactions resulting from business operations over a period of time. These transactions are summarized in the preparation of financial statements, including the balance sheet, income statement, and cash flow statement, that record the company&#x27;s operating performance over a specified period.</p><p id="b37180da-158f-417f-b1bf-7a7d48c041c4" class="">Work opportunities for a financial accountant can be found in both the public and private sectors. A financial accountant&#x27;s duties may differ from those of a general accountant, who works for himself or herself rather than directly for a company or organization.</p><h3 id="121311a8-4bbc-4f42-9d2e-33c8dd5b541f" class="">Q2: Explain “Revenue”.</h3><p id="9b4fbf0b-84fb-40a5-a69f-88c395507496" class="">Revenue is the money generated from normal business operations, calculated as the average sales price times the number of units sold. It is the top line (or gross income) figure from which costs are subtracted to determine net income. Revenue is also known as sales on the income statement.</p><p id="0e7b5bdc-7bfc-4e92-a051-b8838b79acc5" class="">Revenue is money brought into a company by its business activities. There are different ways to calculate revenue, depending on the accounting method employed. Accrual accounting will include sales made on credit as revenue for goods or services delivered to the customer.</p><h3 id="e1d96693-f255-466c-9417-0025b3c1c5ed" class="">Q3: Explain “Expenses”.</h3><p id="2bb9985d-8531-4daa-848c-b19f34fbb6cb" class="">An expense is the cost of operations that a company incurs to generate revenue. As the popular saying goes, “it costs money to make money.”</p><p id="b1609b25-68a1-425f-8de2-9d83d17629d2" class="">Common expenses include payments to suppliers, employee wages, factory leases, and equipment depreciation. Businesses are allowed to write off tax-deductible expenses on their income tax returns to lower their taxable income and thus their tax liability. However, the Internal Revenue Service has strict rules on which expenses businesses are allowed to claim as a deduction.</p><h3 id="6225da59-87e1-4342-b6af-3022022f3cd3" class="">Q4: Write a short note on “Capital”.</h3><p id="d7bd4d0a-478a-43dd-a23b-52aa2b0c8525" class=""><strong>Capital</strong> can mean different things in the business world. Let&#x27;s take a look at two of the primary meanings of the term.</p><p id="3799b555-a07f-4e09-a5ca-458cfe61102e" class="">Capital is one of the basic factors of production along with land and labor. It is the accumulated assets of a business that can be used to generate income for the business. Capital includes all goods that are made or created by humans and used for producing goods or services. Capital can include physical assets, such as a production plant, or financial assets, such as an investment portfolio. Some treat the knowledge, skills, and abilities that employees contribute to the generation of income as human capital.</p><p id="1ffacaa9-8b91-4c0c-bfa7-d91ff938d09b" class="">Capital can also refer to money invested in a business to purchase assets. Businesses can raise capital through owner contributions of cash or property, which are called equity contributions, or through loans, called loan capital.</p><h3 id="0132ef65-6b5f-4236-9d41-7474511fbb95" class="">Q5: Write a short note on “Cost”.</h3><p id="960c27f4-8ca1-4f90-931f-e121382f6244" class="">A cost is an expenditure required to produce or sell a product or get an asset ready for normal use. In other words, it’s the amount paid to manufacture a product, purchase inventory, sell merchandise, or get the equipment ready to use in a business process.</p><p id="477a28a6-74d2-4a61-84cf-b6fff99cfec7" class=""><strong>What Does Cost Mean?</strong></p><p id="cc82a3f8-5d19-4f48-8d7a-45151a29f280" class="">There are many different costs, including fixed and variable, but they are all accounted for in the same way. Costs are recorded as expenses on the income statement during an accounting period and cleared out in a closing entry at the end of the period.</p><p id="27b92392-031d-4722-b201-e3e053d2bea4" class=""><strong>Example</strong></p><p id="8dd16141-0c8f-45e4-ac05-8d367b96df7f" class="">Each cost is recorded in a different expense account depending on its purpose and cost driver. For example, the cost recorded to purchase inventory is booked in the cost of goods sold account when inventory is sold. These expenses are presented in a section of the income statement separate from the operating expenses. The cost of goods sold is used to compute gross margin and the gross margin ratio.</p><p id="006217d0-9535-4f30-a905-30917a8f23c5" class="">Costs incurred sell products like employing sales staff, renting selling space, and purchasing display ranks for products are recorded as selling expenses and presented on a multi-step income statement.</p><h3 id="a6efd904-8dff-4882-9147-70d3fbb0e234" class="">Q6: Discuss briefly the basic concepts of accounting?</h3><p id="ba57344e-0e6e-431f-a2e1-ed4c6d21659d" class="">There are a number of conceptual issues that govern the firm foundation of how accounting works. These basic accounting concepts are as follows:</p><ul id="b827ed28-ed8b-4599-88ea-3067e35d47ef" class="bulleted-list"><li style="list-style-type:disc"><em>Accruals concept</em>. Revenue is recognized when earned, and expenses are recognized when assets are consumed. This concept means that a business may recognize revenue, profits, and losses in amounts that vary from what would be recognized based on the cash received from customers or when cash is paid to suppliers and employees. Auditors will only certify the financial statements of a business that have been prepared under the accruals concept.</li></ul><ul id="25f9e592-afbb-4e4f-a3f1-b0fb309b4489" class="bulleted-list"><li style="list-style-type:disc"><em>Conservatism concept</em>. Revenue is only recognized when there is a reasonable certainty that it will be realized, whereas expenses are recognized sooner when there is a reasonable possibility that they will be incurred. This concept tends to result in more conservative financial statements.</li></ul><ul id="fdd825e7-37eb-4d52-91a4-d2128c0edf41" class="bulleted-list"><li style="list-style-type:disc"><em>Consistency concept</em>. Once a business chooses to use a specific accounting method, it should continue using it on a go-forward basis. By doing so, financial statements prepared in multiple periods can be reliably compared.</li></ul><ul id="a6ff51f2-39c6-45c0-8763-34d889f664bb" class="bulleted-list"><li style="list-style-type:disc"><em>Economic entity concept</em>. The transactions of a business are to be kept separate from those of its owners. By doing so, there is no intermingling of personal and business transactions in a company&#x27;s financial statements.</li></ul><ul id="7eb8924c-0da5-4fc7-bf74-a22680921c4d" class="bulleted-list"><li style="list-style-type:disc"><em>Going concern concept</em>. Financial statements are prepared on the assumption that the business will remain in operation in future periods. Under this assumption, revenue and expense recognition may be deferred to a future period, when the company is still operating. Otherwise, all-expense recognition, in particular, would be accelerated into the current period.</li></ul><ul id="f5f46097-fef0-458d-b8df-1f3c1aa48be2" class="bulleted-list"><li style="list-style-type:disc"><em>Matching concept</em>. The expenses related to revenue should be recognized in the same period in which the revenue was recognized. By doing this, there is no deferral of expense recognition into later reporting periods, so that someone viewing a company&#x27;s financial statements can be assured that all aspects of a transaction have been recorded at the same time.</li></ul><ul id="af93ba8d-ae31-4fdf-b153-c2f113d6da22" class="bulleted-list"><li style="list-style-type:disc"><em>Materiality Concept</em>. Transactions should be recorded when not doing so might alter the decisions made by a reader of a company&#x27;s financial statements. This tends to result in relatively small-size transactions being recorded so that the financial statements comprehensively represent the financial results, financial position, and cash flows of a business.</li></ul><h3 id="0d7219f5-f32a-41d5-85c8-645724bd0a28" class="">Q7: Explain the different types of accounting.</h3><p id="78c380bc-6de3-4be4-974c-f2f07908a436" class="">There are several types of <a href="https://www.accountingtools.com/articles/what-is-accounting.html">accounting</a> that range from auditing to the preparation of tax returns. <a href="https://www.accountingtools.com/articles/2017/8/28/accountant">Accountants</a> tend to specialize in one of these fields, which leads to the different career tracks noted below:</p><ul id="fc936fa9-2eb0-44ce-a670-4913ac09bfa9" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.accountingtools.com/articles/2017/5/10/financial-accounting"><em>Financial accounting</em></a>. This field is concerned with the aggregation of <a href="https://www.accountingtools.com/articles/2017/5/10/financial-information">financial information</a> into external reports. Financial accounting requires detailed knowledge of the <a href="https://www.accountingtools.com/articles/2017/5/7/accounting-framework">accounting framework</a> used by the reader of a company&#x27;s <a href="https://www.accountingtools.com/articles/2017/5/10/financial-statements">financial statements</a>, such as Generally Accepted Accounting Principles (<a href="https://www.accountingtools.com/articles/what-is-gaap.html">GAAP</a>) or International Financial Reporting Standards (<a href="https://www.accountingtools.com/articles/what-is-ifrs.html">IFRS</a>). Or, if a company is <a href="https://www.accountingtools.com/articles/2018/2/16/publicly-held">publicly-held</a>, it requires a knowledge of the standards issued by the government entity responsible for <a href="https://www.accountingtools.com/articles/2017/5/16/public-company">public company</a> reporting in a specific country (such as the <a href="https://www.accountingtools.com/articles/2017/5/16/securities-and-exchange-commission">Securities and Exchange Commission</a> in the United States). There are several career tracks involved in financial accounting. There is a specialty in external reporting, which usually involves a detailed knowledge of <a href="https://www.accountingtools.com/articles/2017/5/8/accounting-standard">accounting standards</a>. There is also the <a href="https://www.accountingtools.com/articles/2017/5/14/controller-job-description">controller</a> track, which requires a combined knowledge of financial and management accounting.</li></ul><ul id="aeb143e6-1622-4bfe-8db4-8dd250fff6c7" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.accountingtools.com/articles/what-is-public-accounting.html"><em>Public accounting</em></a>. This field investigates the financial statements and supporting accounting systems of client companies, to provide assurance that the financial statements assembled by clients fairly present their financial results and <a href="https://www.accountingtools.com/articles/2017/5/10/financial-position">financial position</a>. This field requires excellent knowledge of the relevant accounting framework, as well as an inquiring personality that can delve into client systems as needed. The career track here is to progress through various audit staff positions to become an audit partner.</li></ul><ul id="3a6d0edd-ef6d-4da1-bb8e-f51650570d5c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.accountingtools.com/articles/governmental-accounting.html"><em>Government accounting</em></a>. This field uses a unique accounting framework to create and manage funds, from which cash is disbursed to pay for a number of <a href="https://www.accountingtools.com/articles/2017/5/6/expenditure">expenditures</a> related to the provision of services by a government entity. Government accounting requires such a different skill set that accountants tend to specialize within this area for their entire careers.</li></ul><ul id="396155ef-d1a5-4824-88ab-d16f49993d9b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.accountingtools.com/articles/forensic-accounting-overview.html"><em>Forensic accounting</em></a>. This field involves the reconstruction of financial information when a complete set of <a href="https://www.accountingtools.com/articles/2017/5/10/financial-records">financial records</a> is not available. This skill set can be used to reconstruct the records of a destroyed business, to reconstruct fraudulent records, to convert <a href="https://www.accountingtools.com/articles/what-is-the-cash-basis-of-accounting.html">cash-basis accounting</a> records to an <a href="https://www.accountingtools.com/articles/what-is-the-accrual-basis-of-accounting.html">accrual basis</a>, and so forth. This career tends to attract <a href="https://www.accountingtools.com/articles/2017/5/5/auditor">auditors</a>. It is usually a consulting position since few businesses require the services of a full-time forensic accountant. Those in this field are more likely to be involved in the <a href="https://www.accountingtools.com/articles/2017/5/13/insurance">insurance</a> industry, legal support, or within a specialty practice of an audit firm.</li></ul><ul id="3951e08c-fd0b-44e1-bae9-6b6bde7ac8c1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.accountingtools.com/articles/2017/5/8/management-accounting"><em>Management accounting</em></a>. This field is concerned with the process of accumulating accounting information for internal operational reporting. It includes such areas as <a href="https://www.accountingtools.com/articles/2017/9/21/cost-accounting">cost accounting</a> and <a href="https://www.accountingtools.com/articles/2017/5/14/target-costing">target costing</a>. A career track in this area can eventually lead to the controller position or can diverge into a number of specialty positions, such as <a href="https://www.accountingtools.com/articles/2017/5/5/cost-accountant-job-description">cost accountant</a>, <a href="https://www.accountingtools.com/articles/2017/5/14/billing-clerk-job-description">billing clerk</a>, <a href="https://www.accountingtools.com/articles/2017/5/14/payables-clerk-job-description">payables clerk</a>, and <a href="https://www.accountingtools.com/articles/2017/5/14/payroll-clerk-job-description">payroll clerk</a>.</li></ul><ul id="c4b1eef6-e661-4e9c-b3d3-3a152adfaf87" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.accountingtools.com/articles/tax-accounting.html"><em>Tax accounting</em></a>. This field is concerned with the proper compliance with tax regulations, tax filings, and tax planning to reduce a company&#x27;s tax burden in the future. There are multiple tax specialties, tracking toward the tax manager position.</li></ul><ul id="eebd0041-22d2-4e48-8c04-fa5038f40f53" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.accountingtools.com/articles/2017/9/27/internal-audit"><em>Internal auditing</em></a><em>. </em>This field is concerned with the examination of a company&#x27;s systems and <a href="https://www.accountingtools.com/articles/2017/5/15/transaction">transactions</a> to spot control weaknesses, <a href="https://www.accountingtools.com/articles/what-is-fraud.html">fraud</a>, waste, and mismanagement, and the reporting of these findings to management. The career track progresses from various <a href="https://www.accountingtools.com/articles/2017/5/14/internal-auditor-job-description">internal auditor</a> positions to the manager of internal audit. There are specialties available, such as the information systems auditor and the environmental auditor.</li></ul><h3 id="7d2122b4-f3b9-446d-a1f6-c03735edaac4" class="">Q8: Discuss the role and activities of an accountant.</h3><p id="994c42df-30c6-443b-b4ca-f518f09e3907" class="">An <strong>accountant</strong> is a professional who is responsible for keeping and interpreting financial records. Most accountants are responsible for a wide range of finance-related tasks, either for individual clients or for larger businesses and organizations employing them.</p><p id="88119f60-fba4-48a2-8a4e-34887bc64516" class="">Several other terms are often discussed in conjunction with the phrase “accountant,” which can lead to confusion on what this career actually entails. For example, “accountant” and “bookkeeper” are phrases that are sometimes used interchangeably, yet there are several key differences between these job titles.</p><p id="48ef90bc-ccc3-43aa-986f-edc59e371511" class=""><strong>Roles and Responsibilities</strong></p><p id="c26d612d-f5a7-4a76-a664-60d4af80a8ca" class="">Although the daily duties of an accountant will vary by position and organization, some of the most common tasks and responsibilities of accountants include:</p><ul id="e61a5b79-5a79-4d88-869b-37b28cbcc49d" class="bulleted-list"><li style="list-style-type:disc">Ensuring the accuracy of financial documents, as well as their compliance with relevant laws and regulations</li></ul><ul id="dc69c8c6-15eb-4545-ac54-f1eedf75c5df" class="bulleted-list"><li style="list-style-type:disc">Preparing and maintaining important financial reports</li></ul><ul id="4ebf56f9-a0e1-4f70-aea7-d663745c2639" class="bulleted-list"><li style="list-style-type:disc">Preparing tax returns and ensuring that taxes are paid properly and on time</li></ul><ul id="5158ec31-1e9a-463c-aef3-8dbec8ad709b" class="bulleted-list"><li style="list-style-type:disc">Evaluating financial operations to recommend best practices, identify issues and strategize solutions, and help organizations run efficiently</li></ul><ul id="9bd601ac-9cfe-4673-9aea-f0bada6acfbd" class="bulleted-list"><li style="list-style-type:disc">Offering guidance on cost reduction, revenue enhancement, and profit maximization</li></ul><ul id="cf1049b0-2495-4b9d-8c45-3cb3821cfb32" class="bulleted-list"><li style="list-style-type:disc">Conducting forecasting and risk analysis assessments</li></ul><p id="5ae054a4-1bd4-44e1-85d5-047ff8236237" class="">Additionally, accountants have a legal obligation to act honestly and avoid negligence in their practices. As such, they are also responsible for ensuring that their clients’ financial records are compliant with the relevant laws and regulations.</p><p id="a73cbde1-25c9-4ff7-b019-629e2c47c4d4" class=""><strong>Important Skills</strong></p><p id="5b72a795-00f8-46fe-abb7-9e007ad5cc38" class="">There are several skills that all accountants need in order to be successful in their roles. Some of the most important skills for accountants are:</p><ul id="6d27bcf4-da56-4801-8444-ac0afb556996" class="bulleted-list"><li style="list-style-type:disc"><strong>Attention to detail</strong>: Accounting professionals must pay strong attention to detail in order to be able to keep the information accurate and organized. With the amount of financial data that must be analyzed, it can be easy to make mistakes; however, simple errors can translate into much larger problems if they are not caught.</li></ul><ul id="916371e3-547d-4858-a499-612ad4cc9438" class="bulleted-list"><li style="list-style-type:disc"><strong>Business acumen</strong>: To be effective in this role, an accountant must understand the basic functions of a business in order to accurately analyze and interpret financial data. Having a solid foundation in business provides context to the financial information that accountants work with on a daily basis.</li></ul><ul id="859a0f31-c8d7-4440-9947-62576944e6c6" class="bulleted-list"><li style="list-style-type:disc"><strong>Computer literacy</strong>: Professionals in this field need to be able to use advanced accounting software and other computer-based tools to work effectively.</li></ul><ul id="0cb7330e-63cb-4e65-a7aa-ceab73a465f3" class="bulleted-list"><li style="list-style-type:disc"><strong>Analytical skills</strong>: Collecting and analyzing financial data is a large part of accounting and is an important aspect of identifying patterns and potential issues. In fact, applying data analytics to the accounting field is an emerging trend in the industry that is expected to have a growing impact in the future.</li></ul><ul id="d0b66457-5f1e-4063-8810-e4bd7639d490" class="bulleted-list"><li style="list-style-type:disc"><strong>Communication skills</strong>: Accountants must be able to listen carefully in order to accurately gather facts and figures from clients, managers, or other stakeholders. They must also be able to clearly articulate the results of their work and present their findings in written reports.</li></ul><ul id="9c548bad-be26-41bd-b6c7-ef7c98f2b964" class="bulleted-list"><li style="list-style-type:disc"><strong>Mathematical skills</strong>: A common misconception is that you have to be good at math to be an accountant. It is true that math skills are important in order to analyze, compare, and interpret data and figures; however, complex mathematical skills are not typically necessary to become an accountant.</li></ul></div></article></body></html>
